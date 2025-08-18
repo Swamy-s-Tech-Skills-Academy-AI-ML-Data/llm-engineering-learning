@@ -33,7 +33,7 @@ Early setup & curriculum alignment phase. Experiment scaffolding and evaluation 
 ## 📚 Primary Course Reference
 
 Studying: "LLM Engineering: Master AI, Large Language Models & Agents" by Ed Donner on Udemy.
-Course link: <https://www.udemy.com/course/llm-engineering-master-ai-and-large-language-models/>
+Course link: <https://www.udemy.com/course/llm-engineering-master-ai-and-large-language-models/?couponCode=NVDIN35>
 
 Supplemented with official docs, open papers, and community benchmarks.
 
@@ -93,11 +93,11 @@ Add once initial code lands—likely to include:
 * Papers: RAG triad (retrieval quality, generation control, evaluation), Toolformer, Self-Ask
 * Evaluation frameworks: RAGAS, TruLens, LM Evaluation Harness
 
-## � Extended Learning Plan
+## 📎 Extended Learning Plan
 
 For a detailed 12‑week study blueprint, daily workflow pattern, metrics schema, and capstone ideas see: [`docs/learning-plan.md`](docs/learning-plan.md)
 
-## �🔐 Ethics & Safety Notes (Intent)
+## 🔐 Ethics & Safety Notes (Intent)
 
 * Avoid storing or committing sensitive data
 * Log only minimal necessary interaction metadata
@@ -129,15 +129,21 @@ This uses the repository's .markdownlint.json automatically.
 
 ### Link check (Lychee)
 
-Run a quick local link check using Lychee (via Docker):
+CI currently checks `README.md` and `docs/**/*.md`. To replicate locally (Docker image mirrors CI action):
 
 ```powershell
-# Extract links only (does not validate)
-docker run --rm -w /input -v "${PWD}:/input" lycheeverse/lychee:latest --config lychee.toml --no-progress --dump README.md 01_LeadArchitectKnowledgeBase/**/*.md 02_LearningJourney/**/*.md 03_ReferenceLibrary/**/*.md 04_LegacyContent/**/*.md 05_Todos/**/*.md .github/**/*.md
+# List links only (no validation)
+docker run --rm -w /input -v "${PWD}:/input" lycheeverse/lychee:latest \
+ --config lychee.toml --no-progress --dump README.md docs/**/*.md .github/**/*.md
 
-# Validate links (recommended; matches CI behavior)
-docker run --rm -w /input -v "${PWD}:/input" lycheeverse/lychee:latest --config lychee.toml --no-progress README.md 01_LeadArchitectKnowledgeBase/**/*.md 02_LearningJourney/**/*.md 03_ReferenceLibrary/**/*.md 04_LegacyContent/**/*.md 05_Todos/**/*.md .github/**/*.md
+# Validate links (same as CI)
+docker run --rm -w /input -v "${PWD}:/input" lycheeverse/lychee:latest --config lychee.toml --no-progress README.md docs/**/*.md .github/**/*.md
 ```
+
+If you add markdown elsewhere (e.g. prompt notes), update both:
+
+* `.github/workflows/docs-quality.yml` (lychee args)
+* `lychee.toml` (optional path excludes)
 
 ### Manual Docs Quality Workflow
 
@@ -148,3 +154,22 @@ CI runs automatically on PRs and pushes that modify documentation, but you can a
 3. View markdownlint + Lychee results; download the `lychee-report` artifact for details
 
 Reason: Manual trigger accelerates iteration when adjusting large batches of links or performing structural renumbering.
+
+### Local Experiment Logging Smoke Test
+
+```powershell
+python -m eval.log_utils
+python -m eval.metrics
+```
+
+Expected: `eval/experiment_log.csv` created and a sample metrics dict printed.
+
+### Consistency Checklist
+
+| Item | Expectation |
+|------|-------------|
+| Prompts | Stored under `prompts/` with metadata sidecars |
+| Experiments | Each new run logged via `log_utils.log_run` |
+| Links | New external links validated or excluded intentionally |
+| Structure | New folders documented in Repository Structure section |
+| Reproducibility | No secrets committed; env handling via `.env` |

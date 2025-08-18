@@ -29,6 +29,8 @@ exclude = [
   # Localhost / loopback
   "https?://localhost",
   "https?://127.0.0.1",
+  # Udemy course link blocks automated (unauthenticated) requests with 403
+  'https?://www\.udemy\.com/course/llm-engineering-master-ai-and-large-language-models/?'
 ]
 
 # Skip link checking inside these filesystem paths (globs)

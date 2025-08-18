@@ -12,13 +12,21 @@ Concise, actionable companion to the main `README`. Use this to spin up your per
 ## 🚀 Quick Start (Minimal)
 
 1. Clone & create environment (after updating `environment.yml` if needed):
- - `conda env create -f environment.yml`
- - `conda activate llm-engineering`
-2. Create baseline folders (only what you need now):
- - `prompts/`, `notebooks/`, `rag/`, `eval/`, `agents/`, `scripts/`, `data/raw/`, `data/processed/`
-3. Add a first notebook: `notebooks/00_diagnostics.ipynb` (token tests, API keys load, simple embedding call).
-4. Start an experiment log: `eval/experiment_log.csv` (see Metrics section).
-5. Commit early: small, frequent, tagged by week (`week01_prompt_basics`).
+
+ ```bash
+ conda env create -f environment.yml
+ conda activate llm-engineering
+ ```
+
+1. Create baseline folders (only what you need now):
+
+ `prompts/`, `notebooks/`, `rag/`, `eval/`, `agents/`, `scripts/`, `data/raw/`, `data/processed/`
+
+1. Add a first notebook: `notebooks/00_diagnostics.ipynb` (token tests, API keys load, simple embedding call).
+
+1. Start an experiment log: `eval/experiment_log.csv` (see Metrics section).
+
+1. Commit early: small, frequent, tagged by week (`week01_prompt_basics`).
 
 ---
 
