@@ -113,3 +113,38 @@ See `LICENSE` for details.
 
 ---
 If you're reading along: suggestions & refinement ideas welcome once core scaffolding ships.
+
+## Development
+
+### Docs quality checks (local)
+
+Run Markdown lint against README and all docs before opening a PR:
+
+```powershell
+# From repo root
+npx --yes markdownlint-cli2 "README.md" "docs/**/*.md" ".github/**/*.md"
+```
+
+This uses the repository's .markdownlint.json automatically.
+
+### Link check (Lychee)
+
+Run a quick local link check using Lychee (via Docker):
+
+```powershell
+# Extract links only (does not validate)
+docker run --rm -w /input -v "${PWD}:/input" lycheeverse/lychee:latest --config lychee.toml --no-progress --dump README.md 01_LeadArchitectKnowledgeBase/**/*.md 02_LearningJourney/**/*.md 03_ReferenceLibrary/**/*.md 04_LegacyContent/**/*.md 05_Todos/**/*.md .github/**/*.md
+
+# Validate links (recommended; matches CI behavior)
+docker run --rm -w /input -v "${PWD}:/input" lycheeverse/lychee:latest --config lychee.toml --no-progress README.md 01_LeadArchitectKnowledgeBase/**/*.md 02_LearningJourney/**/*.md 03_ReferenceLibrary/**/*.md 04_LegacyContent/**/*.md 05_Todos/**/*.md .github/**/*.md
+```
+
+### Manual Docs Quality Workflow
+
+CI runs automatically on PRs and pushes that modify documentation, but you can also trigger it manually:
+
+1. Open GitHub → Actions → "Docs Quality" workflow
+2. Click "Run workflow" (no inputs required)
+3. View markdownlint + Lychee results; download the `lychee-report` artifact for details
+
+Reason: Manual trigger accelerates iteration when adjusting large batches of links or performing structural renumbering.
