@@ -71,6 +71,53 @@ Add once initial code lands—likely to include:
 * Requirements / lock files
 * Optional GPU acceleration notes
 
+### Part 2: Install Anaconda Environment (Windows)
+
+If this Part 2 gives you any problems, an alternative Part 2B can be added later (e.g. using `uv` or `venv`).
+
+1. **Install Anaconda**
+
+* Download Anaconda from <https://docs.anaconda.com/anaconda/install/windows/>
+* Run the installer and follow the prompts. It uses several GB and can take a while, but provides a powerful platform going forward.
+
+1. **Set up the environment**
+
+* Open **Anaconda Prompt** (search in the Start menu)
+* Navigate to the project root, e.g.:
+
+```powershell
+cd C:\Path\To\llm-engineering-learning
+dir  # confirm you see folders like prompts, eval, docs
+```
+
+* Create the environment:
+
+```powershell
+conda env create -f environment.yml
+```
+
+* (Windows gotcha) If you get an `ArchiveError`, it may be due to the legacy 260‑character path limit. Enable long paths (Group Policy or registry) and retry, or relocate the repo to a shorter path (e.g. `C:\src\llm`).
+* Wait for packages to install. First-time Anaconda setups can take many minutes (occasionally 30+). If it exceeds ~75 minutes or errors repeatedly, plan to use Part 2B (alternative environment method) later.
+* Activate the environment:
+
+```powershell
+conda activate llm-engineering
+```
+
+* You should now see `(llm-engineering)` at the start of your prompt. This indicates your isolated LLM engineering environment is active.
+
+1. **Start Jupyter Lab (optional early smoke test)**
+
+From the project root (with the environment active):
+
+```powershell
+jupyter lab
+```
+
+ A browser tab should open. Close it (and the prompt) once you verify it launches. Jupyter will be used later for exploratory notebooks (e.g. `notebooks/00_diagnostics.ipynb`).
+
+> Note: The original instructions referenced `conda activate llms`; this repository standardizes on the environment name declared in `environment.yml`: `llm-engineering`.
+
 ## 🔍 Evaluation Philosophy
 
 * Prefer small, fast feedback loops
@@ -144,6 +191,19 @@ If you add markdown elsewhere (e.g. prompt notes), update both:
 
 * `.github/workflows/docs-quality.yml` (lychee args)
 * `lychee.toml` (optional path excludes)
+
+#### Excluded links
+
+Certain domains (e.g. private course pages) can return steady 403s to unauthenticated bots. The Udemy course link in the Primary Course Reference section is intentionally excluded in `lychee.toml` via a regex literal to avoid noisy failures:
+
+```toml
+exclude = [
+ # ...other patterns...
+ 'https?://www\.udemy\.com/course/llm-engineering-master-ai-and-large-language-models/?'
+]
+```
+
+Remove that pattern if you want Lychee to re-validate it (may still 403). Keep exclusions minimal so real link rot is caught.
 
 ### Manual Docs Quality Workflow
 
