@@ -1,0 +1,35 @@
+{
+    "$schema": "https://schemas.github.com/copilot/settings.schema.json",
+    "projectName": "llm-engineering-learning",
+    "instructionsFile": ".github/copilot-instructions.md",
+    "style": {
+        "language": "python",
+        "preferTypeHints": true,
+        "maxFunctionLength": 60,
+        "docstringStyle": "google"
+    },
+    "prompts": {
+        "general": [
+            "Follow repository conventions: small modules, explicit config, reproducible experiments.",
+            "Never hardcode secrets; assume .env loading.",
+            "Log experiment metadata (run_id, model, prompt_hash, tokens, latency)."
+        ],
+        "addedFileHeader": "# Auto-generated with guidance from .github/copilot-instructions.md\n# Review for correctness and adapt before production use."
+    },
+    "filters": {
+        "disallow": [
+            {
+                "pattern": "openai.api_key =",
+                "reason": "Do not inline API keys"
+            },
+            {
+                "pattern": "os.environ\\[.*API_KEY.*\\] =",
+                "reason": "Avoid setting secrets in code"
+            }
+        ]
+    },
+    "experiments": {
+        "enablePromptCaching": true,
+        "logSuggestionMetadata": true
+    }
+}
