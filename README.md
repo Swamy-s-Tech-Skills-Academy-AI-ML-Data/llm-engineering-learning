@@ -93,7 +93,11 @@ Add once initial code lands—likely to include:
 * Papers: RAG triad (retrieval quality, generation control, evaluation), Toolformer, Self-Ask
 * Evaluation frameworks: RAGAS, TruLens, LM Evaluation Harness
 
-## 🔐 Ethics & Safety Notes (Intent)
+## � Extended Learning Plan
+
+For a detailed 12‑week study blueprint, daily workflow pattern, metrics schema, and capstone ideas see: [`docs/learning-plan.md`](docs/learning-plan.md)
+
+## �🔐 Ethics & Safety Notes (Intent)
 
 * Avoid storing or committing sensitive data
 * Log only minimal necessary interaction metadata
