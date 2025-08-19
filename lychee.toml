@@ -1,0 +1,45 @@
+############################################################
+# Lychee Link Checker Configuration                        #
+# Docs: https://github.com/lycheeverse/lychee               #
+# Tuned for LLM engineering learning repo                   #
+############################################################
+
+# Logging / UX
+verbose = "info"          # info|warn|error|debug
+no_progress = true         # cleaner CI logs
+
+# Network / retry behaviour
+timeout = 20               # seconds per request
+max_retries = 2
+retry_wait_time = 2        # seconds between retries
+threads = 8                # concurrency (adjust if rate-limited)
+
+# Treat these status codes as acceptable (e.g., 429 = rate-limited but not fatal)
+accept = [200, 206, 429]
+
+# Caching (speeds up local checks); CI can disable with --no-cache if desired
+cache = true
+max_cache_age = "1d"       # re-validate daily
+
+# Identification
+user_agent = "lychee/llm-engineering-learning (link audit)"
+
+# Exclude specific URL patterns (regex supported)
+exclude = [
+  # Localhost / loopback
+  "https?://localhost",
+  "https?://127.0.0.1",
+  # Udemy course link blocks automated (unauthenticated) requests with 403
+  'https?://www\.udemy\.com/course/llm-engineering-master-ai-and-large-language-models/?'
+]
+
+# Skip link checking inside these filesystem paths (globs)
+exclude_path = [
+  "data/**",            # raw/processed data may contain transient links
+  "docs/retros/**"      # retrospective notes (low value link checking)
+]
+
+# (Optional) Provide GitHub token via env for higher rate limits
+# github_token = "${GITHUB_TOKEN}"
+
+# Future: set `output = "lychee-report.md"` or JSON for CI artifact if desired.
