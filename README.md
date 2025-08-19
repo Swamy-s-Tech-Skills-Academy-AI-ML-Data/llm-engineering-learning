@@ -102,6 +102,8 @@ conda env create -f environment.yml
 
 ```powershell
 conda activate llm-engineering
+
+conda deactivate
 ```
 
 * You should now see `(llm-engineering)` at the start of your prompt. This indicates your isolated LLM engineering environment is active.
