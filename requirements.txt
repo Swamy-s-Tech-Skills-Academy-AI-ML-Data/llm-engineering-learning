@@ -1,39 +1,71 @@
+############################################################
+# Python Virtual Environment Requirements (CPU-only setup)  #
+#                                                          #
+# Usage (PowerShell example):                              #
+#   python -m venv .venv                                   #
+#   . .venv/Scripts/Activate.ps1                           #
+#   pip install --upgrade pip                              #
+#   pip install -r requirements.txt                        #
+#                                                          #
+# Torch CPU wheels: the default PyPI torch build is CPU-   #
+# only. If you want to force the PyTorch CPU index (more   #
+# explicit), uncomment the two index lines below.          #
+# NOTE: Leave them commented if you later need CUDA wheels.#
+############################################################
+# --index-url https://download.pytorch.org/whl/cpu
+# --extra-index-url https://pypi.org/simple
+
+######## Core Utilities ########
 python-dotenv
-jupyterlab
-ipywidgets
 requests
+tqdm
+setuptools
+psutil
+protobuf==3.20.2
+
+######## Data / Scientific ########
 numpy
 pandas
 scipy
 scikit-learn
-matplotlib
+pyarrow
+datasets==3.6.0
 gensim
-torch
+
+######## LLM / NLP Stack ########
+torch           # CPU build (no CUDA) – see index lines above if needed
 transformers
-tqdm
-openai
-gradio
+sentence-transformers
 langchain
 langchain-core
 langchain-text-splitters
 langchain-openai
 langchain-chroma
 langchain-community
-datasets==3.6.0
-matplotlib
-google-generativeai
-anthropic
 chromadb
+openai
+anthropic
+google-generativeai
+ollama
+modal
+wandb
+
+######## Evaluation / Visualization ########
+matplotlib
 plotly
 jupyter-dash
+ipywidgets
+jupyterlab
+
+######## Web / Ingestion / Media ########
 beautifulsoup4
-pydub
-modal
-ollama
-psutil
-setuptools
-speedtest-cli
-sentence_transformers
 feedparser
-protobuf==3.20.2
-wandb
+gradio
+pydub
+speedtest-cli
+
+######## Optional UI / Docs ########
+# streamlit  # Uncomment if you build Streamlit demos
+
+######## Misc Domain-Specific ########
+# Add any course/week specific packages below
