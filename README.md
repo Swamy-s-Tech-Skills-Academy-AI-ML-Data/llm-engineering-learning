@@ -120,6 +120,43 @@ jupyter lab
 
 > Note: The original instructions referenced `conda activate llms`; this repository standardizes on the environment name declared in `environment.yml`: `llm-engineering`.
 
+## 🔹 virtual Environment Installation & Setup
+
+Steps (PowerShell on Windows shown; bash/zsh equivalents in comments):
+
+```powershell
+# 1. Verify tooling
+python --version
+pip --version
+
+py -0p # To check installed Python versions (3.11+ required)
+
+# 2. Create & activate virtual environment (force Python 3.12)
+pip install virtualenv
+py -3.12 -m venv .venv                  # Ensures the venv uses Python 3.12
+. .venv/Scripts/Activate.ps1            # (bash/zsh: source .venv/bin/activate)
+
+# 3. Upgrade pip
+python -m pip install --upgrade pip
+
+# 4. First install (Bootstrap alternative if no requirements.txt yet):
+pip install openai tiktoken python-dotenv
+pip freeze > requirements.txt
+
+# 5. Install dependencies if requirements.txt exists
+pip install -r requirements.txt         # If the file exists (preferred)
+
+# 6. Provide your API key (either set env var or create .env)
+setx OPENAI_API_KEY "sk-..."            # (bash/zsh: export OPENAI_API_KEY="sk-...")
+# Then restart the shell so setx takes effect.
+```
+
+Optional version pinning: add a `.python-version` file at repo root (used by pyenv / some IDEs). Example:
+
+```text
+3.12
+```
+
 ## 🔍 Evaluation Philosophy
 
 * Prefer small, fast feedback loops
