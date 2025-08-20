@@ -425,3 +425,4 @@ __pycache__/
 .env
 
 .ipynb_checkpoints/
+notebooks/report.txt
