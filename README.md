@@ -30,6 +30,24 @@ Personal, hands-on exploration of modern Large Language Model (LLM) engineering,
 
 Early setup & curriculum alignment phase. Experiment scaffolding and evaluation harness design in progress.
 
+## ⚡ Quick Start (Local)
+
+```powershell
+# Clone (adjust URL if you forked)
+git clone <YOUR_FORK_URL> llm-engineering-learning
+cd llm-engineering-learning
+
+# Create environment via conda (preferred)
+conda env create -f environment.yml
+conda activate llm-engineering
+
+# (Optional) Smoke test logging + metrics modules
+python -m eval.log_utils
+python -m eval.metrics
+```
+
+If conda is slow or fails, skip to the virtualenv option in Environment Setup below.
+
 ## 📚 Primary Course Reference
 
 Studying: "LLM Engineering: Master AI, Large Language Models & Agents" by Ed Donner on Udemy.
@@ -62,67 +80,47 @@ Supplemented with official docs, open papers, and community benchmarks.
 └─ docs/               # Deeper writeups & decision logs
 ```
 
-## 🛠 Recommended Local Setup (Placeholder)
+## 🛠 Environment Setup (Choose One)
 
-Add once initial code lands—likely to include:
+| Option | When to Prefer | Pros | Considerations |
+|--------|----------------|------|----------------|
+| Conda (Anaconda / Miniconda / Mamba) | Need compiled libs (PyTorch, CUDA later), reproducible YAML | Handles complex binaries | Slower solve (speed up with mamba) |
+| Native virtualenv / venv | Simpler, fast creation, fewer moving parts | Lightweight & quick | Manual handling of some binary deps |
 
-* Python 3.11+ (or split polyglot if Node components appear)
-* Virtual environment instructions
-* Requirements / lock files
-* Optional GPU acceleration notes
+### Option A: Conda
 
-### Part 2: Install Anaconda Environment (Windows)
+1. **Install Anaconda / Miniconda** (Windows installer: <https://docs.anaconda.com/anaconda/install/windows/>)
 
-If this Part 2 gives you any problems, an alternative Part 2B can be added later (e.g. using `uv` or `venv`).
+ (Optional) After install, speed up solving:
 
-1. **Install Anaconda**
+ ```powershell
+ conda install -n base -c conda-forge mamba
+ ```
 
-* Download Anaconda from <https://docs.anaconda.com/anaconda/install/windows/>
-* Run the installer and follow the prompts. It uses several GB and can take a while, but provides a powerful platform going forward.
+1. **Create Environment**
 
-1. **Set up the environment**
+ ```powershell
+ cd C:\Path\To\llm-engineering-learning
+ conda env create -f environment.yml
+ conda activate llm-engineering
+ ```
 
-* Open **Anaconda Prompt** (search in the Start menu)
-* Navigate to the project root, e.g.:
+ ArchiveError / long path issue? Enable long paths:
+ <https://learn.microsoft.com/windows/win32/fileio/maximum-file-path-limitation>
 
-```powershell
-cd C:\Path\To\llm-engineering-learning
-dir  # confirm you see folders like prompts, eval, docs
-```
+1. **(Optional) Jupyter Smoke Test**
 
-* Create the environment:
+ ```powershell
+ jupyter lab
+ ```
 
-```powershell
-conda env create -f environment.yml
-```
+ Close it after confirming it opens. Notebook: `notebooks/00_diagnostics.ipynb` will be added later.
 
-* (Windows gotcha) If you get an `ArchiveError`, it may be due to the legacy 260‑character path limit. Enable long paths (Group Policy or registry) and retry, or relocate the repo to a shorter path (e.g. `C:\src\llm`).
-* Wait for packages to install. First-time Anaconda setups can take many minutes (occasionally 30+). If it exceeds ~75 minutes or errors repeatedly, plan to use Part 2B (alternative environment method) later.
-* Activate the environment:
+Deactivate anytime with `conda deactivate`.
 
-```powershell
-conda activate llm-engineering
+### Option B: Virtualenv / venv
 
-conda deactivate
-```
-
-* You should now see `(llm-engineering)` at the start of your prompt. This indicates your isolated LLM engineering environment is active.
-
-1. **Start Jupyter Lab (optional early smoke test)**
-
-From the project root (with the environment active):
-
-```powershell
-jupyter lab
-```
-
- A browser tab should open. Close it (and the prompt) once you verify it launches. Jupyter will be used later for exploratory notebooks (e.g. `notebooks/00_diagnostics.ipynb`).
-
-> Note: The original instructions referenced `conda activate llms`; this repository standardizes on the environment name declared in `environment.yml`: `llm-engineering`.
-
-## 🔹 virtual Environment Installation & Setup
-
-Steps (PowerShell on Windows shown; bash/zsh equivalents in comments):
+PowerShell (Windows) shown; bash/zsh equivalents in comments.
 
 ```powershell
 # 1. Verify tooling
