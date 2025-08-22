@@ -1,0 +1,97 @@
+Starting diagnostics at 2025-08-20 13:10:44
+
+===== System Information =====
+Operating System: Windows
+Windows Release: 11
+Windows Version: 10.0.26100
+Architecture: ('64bit', 'WindowsPE')
+Machine: AMD64
+Processor: Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+Total RAM: 31.69 GB
+Available RAM: 7.70 GB
+Free Disk Space: 247.85 GB
+
+===== File System Information =====
+Current Directory: D:\STSAAIMLDT\llm-engineering-learning\notebooks
+Write permission: OK
+
+Files in Current Directory:
+ - Guide to Jupyter.ipynb
+ - Intermediate Python.ipynb
+ - day1.ipynb
+ - day2 EXERCISE.ipynb
+ - day5.ipynb
+ - diagnostics.py
+ - report.txt
+ - troubleshooting.ipynb
+ - week1 EXERCISE.ipynb
+
+===== Git Repository Information =====
+Git Repository Root: D:/STSAAIMLDT/llm-engineering-learning
+Current Commit: bfbce4e0414331ae55180c41ab0fe19a75681956
+Remote Origin: https://github.com/Swamy-s-Tech-Skills-Academy-AI-ML-Data/llm-engineering-learning.git
+
+===== Environment File Check =====
+.env file exists at: D:/STSAAIMLDT/llm-engineering-learning\.env
+WARNING: OPENAI_API_KEY not found in .env file
+
+===== Anaconda Environment Check =====
+No active Anaconda environment detected
+
+===== Virtualenv Check =====
+Virtualenv is active:
+Environment Path: D:\STSAAIMLDT\llm-engineering-learning\.venv
+Environment Name: .venv
+
+Python Environment:
+Python Version: 3.12.5 (tags/v3.12.5:ff3bc82, Aug  6 2024, 20:45:27) [MSC v.1940 64 bit (AMD64)]
+Python Executable: D:\STSAAIMLDT\llm-engineering-learning\.venv\Scripts\python.exe
+
+Required Package Versions:
+openai: 1.100.2
+python-dotenv: 1.1.1
+requests: 2.32.5
+gradio: 5.43.1
+transformers: 4.55.2
+
+===== Network Connectivity Check =====
+SSL Version: OpenSSL 3.0.13 30 Jan 2024
+✓ Connected to https://www.google.com
+  Response time: 1.67s
+
+Performing bandwidth test using speedtest-cli...
+Download speed: 59.19 Mbps
+Upload speed: 61.50 Mbps
+
+===== Environment Variables Check =====
+
+PYTHONPATH is not set.
+
+Python sys.path:
+ - D:\STSAAIMLDT\llm-engineering-learning\notebooks
+ - C:\Users\PK.Viswanatha-Swamy\AppData\Local\Programs\Python\Python312\python312.zip
+ - C:\Users\PK.Viswanatha-Swamy\AppData\Local\Programs\Python\Python312\DLLs
+ - C:\Users\PK.Viswanatha-Swamy\AppData\Local\Programs\Python\Python312\Lib
+ - C:\Users\PK.Viswanatha-Swamy\AppData\Local\Programs\Python\Python312
+ - D:\STSAAIMLDT\llm-engineering-learning\.venv
+ - D:\STSAAIMLDT\llm-engineering-learning\.venv\Lib\site-packages
+ - D:\STSAAIMLDT\llm-engineering-learning\.venv\Lib\site-packages\win32
+ - D:\STSAAIMLDT\llm-engineering-learning\.venv\Lib\site-packages\win32\lib
+ - D:\STSAAIMLDT\llm-engineering-learning\.venv\Lib\site-packages\Pythonwin
+ - D:\STSAAIMLDT\llm-engineering-learning\.venv\Lib\site-packages\setuptools\_vendor
+OPENAI_API_KEY is set after calling load_dotenv()
+
+===== Additional Diagnostics =====
+ERROR: Additional diagnostics failed: Paths don't have the same drive
+
+===== Warnings Found =====
+The following warnings were detected. They might not prevent the program from running but could cause unexpected behavior:
+- OPENAI_API_KEY not found in .env file
+
+===== Errors Found =====
+The following critical issues were detected. Please address them before proceeding:
+- Additional diagnostics failed: Paths don't have the same drive
+
+
+Completed diagnostics at 2025-08-20 13:11:16
+
