@@ -51,7 +51,7 @@ If conda is slow or fails, skip to the virtualenv option in Environment Setup be
 ## 📚 Primary Course Reference
 
 Studying: "LLM Engineering: Master AI, Large Language Models & Agents" by Ed Donner on Udemy.
-Course link: <https://www.udemy.com/course/llm-engineering-master-ai-and-large-language-models/?couponCode=NVDIN35>
+Course link: <https://www.udemy.com/course/llm-engineering-master-ai-and-large-language-models>
 
 Supplemented with official docs, open papers, and community benchmarks.
 
