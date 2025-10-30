@@ -1,17 +1,17 @@
-# LLM Engineering - Master AI and LLMs
+# LLM Engineering Learning - Setup Guide
 
-## New Setup instructions for PC, Mac and Linux
+## Setup instructions for PC, Mac and Linux
 
-**These are the Setup instructions for the new version of the course as of October 2025. For the original versions (Anaconda) please see the other files in this directory for your platform.**
+**This is a comprehensive setup guide for the LLM Engineering Learning repository. This workspace follows structured best practices for prompt engineering, RAG, agents, and evaluation workflows.**
 
-_If you're looking at this in Cursor, please right click on the filename in the Explorer on the left, and select "Open preview", to view the formatted version._
+_If you're viewing this in VS Code or Cursor, right-click on the filename in the Explorer and select "Open Preview" to view the formatted version._
 
-Welcome, LLM engineers in the making!
+Welcome to your LLM engineering learning journey!
 
-I should confess up-front: setting up a powerful environment to work at the forefront of AI is not as simple as I'd like. For most people these instructions will go great; but in some cases, for whatever reason, you'll hit a problem. Please don't hesitate to reach out - I am here to get you up and running quickly. There's nothing worse than feeling _stuck_. Message me in Udemy or email me and I will unstick you quickly!
+Setting up a powerful environment for AI development requires attention to detail. These instructions are designed to get you up and running smoothly. If you encounter any issues, don't hesitate to troubleshoot using the diagnostics tools provided in the `notebooks/` folder.
 
-Email: <ed@edwarddonner.com>  
-LinkedIn: <https://www.linkedin.com/in/eddonner/>  
+**Repository Owner**: Swamy's Tech Skills Academy - AI, ML & Data  
+**Primary Course Reference**: "LLM Engineering: Master AI, Large Language Models & Agents" by Ed Donner on Udemy  
 
 ## Step 0 - Before we begin - addressing the "GOTCHAS" which trip up many people
 
@@ -58,10 +58,10 @@ Enter the clone command below in the command prompt in the `projects` folder. If
 
 Here's the clone command:
 
-`git clone https://github.com/ed-donner/llm_engineering.git`
+`git clone https://github.com/Swamy-s-Tech-Skills-Academy-AI-ML-Data/llm-engineering-learning.git`
 
-This creates a new directory `llm_engineering` within your projects folder and downloads the code for the class.  
-Do `cd llm_engineering` to go into it. This `llm_engineering` directory is known as the "project root directory".
+This creates a new directory `llm-engineering-learning` within your projects folder and downloads the code for this learning workspace.  
+Do `cd llm-engineering-learning` to go into it. This `llm-engineering-learning` directory is known as the "project root directory".
 
 4. **Cursor** Install Cursor if needed and open the project:
 
@@ -71,9 +71,9 @@ Click Download for Windows. Then run the installer. Accept and pick defaults for
 
 Then go to Start menu, enter cursor. Cursor will come up, and you might need to answer questions. Then you should see the 'new window' screen where you can click "Open Project". If not, go to File menu >> New Window. Then click "Open Project".
 
-Find your llm_engineering directory within your projects directory. Double click on llm_engineering so you're looking at the contents of llm_engineering. Then click Open or Open Folder.
+Find your llm-engineering-learning directory within your projects directory. Double click on llm-engineering-learning so you're looking at the contents. Then click Open or Open Folder.
 
-Cursor should then open up llm_engineering. You know you're in good shape if you see LLM_ENGINEERING in block caps on the top left.
+Cursor should then open up llm-engineering-learning. You know you're in good shape if you see the project structure on the left sidebar.
 
 ___
 
@@ -97,10 +97,10 @@ Open a Terminal: on Mac, open a Finder window, go to Applications >> Utilities >
 
 Enter this in the command prompt in the Projects folder:
 
-`git clone https://github.com/ed-donner/llm_engineering.git`
+`git clone https://github.com/Swamy-s-Tech-Skills-Academy-AI-ML-Data/llm-engineering-learning.git`
 
-This creates a new directory `llm_engineering` within your projects folder and downloads the code for the class.  
-Do `cd llm_engineering` to go into it. This `llm_engineering` directory is known as the "project root directory".
+This creates a new directory `llm-engineering-learning` within your projects folder and downloads the code for this learning workspace.  
+Do `cd llm-engineering-learning` to go into it. This `llm-engineering-learning` directory is known as the "project root directory".
 
 4. **Cursor** Install Cursor if needed and open the project:
 
@@ -110,43 +110,77 @@ Click Download for Mac OS. Or Linux. Then run the installer. Accept and pick def
 
 Then go to Start menu, enter cursor. Cursor will come up, and you might need to answer questions. Then you should see the 'new window' screen where you can click "Open Project". If not, go to File menu >> New Window. Then click "Open Project".
 
-Find your llm_engineering directory within your projects directory. Double click on llm_engineering so you're looking at the contents of llm_engineering. Then click Open.
+Find your llm-engineering-learning directory within your projects directory. Double click on llm-engineering-learning so you're looking at the contents. Then click Open.
 
-Cursor should then open up llm_engineering. You know you're in good shape if you see LLM_ENGINEERING in block caps on the top left.
+Cursor should then open up llm-engineering-learning. You know you're in good shape if you see the project structure on the left sidebar.
 
 ___
 
-## STEP 2: Installing the fabulous **uv** then doing a `uv sync`
+## STEP 2: Environment Setup Options
 
-For this course, we're using uv, the blazingly fast package manager. It's really taken off in the Data Science world -- and for good reason.
+This repository supports two environment setup options:
 
-It's fast and reliable. You're going to love it!
+### Option A: Using uv (Fast Package Manager - Recommended)
 
-First, within Cursor, select View >> Terminal, to see a Terminal window within Cursor. Type `pwd` to check you're in the project root directory.
+**uv** is a blazingly fast package manager that has become popular in the Data Science world.
 
-Now type `uv --version` to see if uv is installed. If you get a version number, then terrific! But if you get an error, then follow the instructions here to install uv - I recommend using the Standalone Installer approach at the very top, but you can use any approach. Run commands in the Cursor installer. If one approach doesn't work for you, then try another.
+First, within your editor, open a Terminal window. Type `pwd` to check you're in the project root directory.
+
+Now type `uv --version` to see if uv is installed. If you get a version number, then terrific! But if you get an error, follow the instructions here to install uv - we recommend using the Standalone Installer approach at the very top:
 
 <https://docs.astral.sh/uv/getting-started/installation/>
 
-Once you've installed uv, you need to open a new terminal window in Cursor (the plus sign or Ctrl+shift+backtick) for `uv --version` to work. Please check!
+Once you've installed uv, you need to open a new terminal window for `uv --version` to work.
 
-Any problems with uv installation or using uv, please see [Q11 on my FAQ page](https://edwarddonner.com/faq/#11) for a full briefing.
-
-### Now that it's installed
+#### Using uv
 
 Run `uv self update` to make sure you're on the latest version of uv.
 
-And now simply run this:  
+And now simply run:  
 `uv sync`  
-uv should install everything blazingly fast. Any problems, please see [Q11 on my FAQ page](https://edwarddonner.com/faq/#11).
+uv should install everything blazingly fast based on the `pyproject.toml` and `uv.lock` files.
 
-You now have a full spec environment!!
-
-Using uv is simple and fast:  
+Using uv is simple:  
 
 1. Instead of `pip install xxx` you do `uv add xxx`  
 2. You never need to activate an environment - uv does it for you.  
 3. Instead of `python xxx` you do `uv run xxx`
+
+### Option B: Using Python Virtual Environment (Traditional Method)
+
+If you prefer the traditional approach or if uv doesn't work for your setup:
+
+1. **Ensure Python 3.12 is installed**
+
+Check your Python version:
+
+```powershell
+py -0  # On Windows to see all Python versions
+python --version  # On Mac/Linux
+```
+
+If you don't have Python 3.12, install it from <https://www.python.org/downloads/>
+
+1. **Create a virtual environment**
+
+```powershell
+# Windows
+py -3.12 -m venv .venv
+.venv\Scripts\Activate.ps1
+
+# Mac/Linux
+python3.12 -m venv .venv
+source .venv/bin/activate
+```
+
+1. **Install dependencies**
+
+```powershell
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+This will install all necessary packages including `openai`, `langchain`, `chromadb`, `transformers`, and more.
 
 ___
 
@@ -177,7 +211,7 @@ ___
 
 If you're wondering why I rant about this: I get many, many frustrated people contacting me who (despite all my appeals) have named the file something else and think it's OK. It's not OK! It needs to be called `.env` in the llm_engineering directory 😂
 
-2. Populate your `.env` file and then Save it:
+1. Populate your `.env` file and then Save it:
 
 Select the file on the left. You should see an empty blank file on the right. And type this into the contents of the file in the right:
 
@@ -191,22 +225,49 @@ But obviously with your actual key there, not the words "sk-proj-lots-and-lots-o
 
 Now be sure to SAVE the file! File >> Save or Ctrl+S (PC) or Command+S (Mac). Many people forget to Save. You need to Save the file!
 
-You should see a Stop sign by the .env file - don't be concerned.. this is a good thing! See Q7 [here](https://edwarddonner.com/faq) if you want to understand why.
+You should see a Git indicator by the .env file showing it's ignored - this is good! The `.gitignore` file ensures your API keys stay private.
 
-__
+## STEP 5 - Install Editor Extensions, Run Diagnostics, and Start Learning
 
-## STEP 5 - Install Cursor Extensions, Open Day 1, Set the Kernel and GO
-
-(If you are prompted in Cursor to install recommended extensions, just say yes! That is a nice shortcut for this step.)
+(If you are prompted in your editor to install recommended extensions, just say yes! That is a nice shortcut for this step.)
 
 - Go to view menu and select Extensions.  
-- Search for "python" to bring up the Python extensions. Select the Python extension made by "ms-python" or by "anysphere" and install it if not already installed.  
-- Search for "jupyter" and select the extension made by "ms-toolsai" and install it if not already installed.
+- Search for "python" to bring up the Python extensions. Select the Python extension and install it if not already installed.  
+- Search for "jupyter" and select the Jupyter extension and install it if not already installed.
 
-Now go to View >> Explorer. Open the week1 folder, and click on `day1.ipynb`.
+### Run Diagnostics
+
+Now let's verify your setup is working correctly:
+
+1. Open a terminal in the project root
+1. Run the diagnostics script:
+
+```powershell
+# If using uv:
+uv run python notebooks/diagnostics.py
+
+# If using venv (make sure it's activated):
+python notebooks/diagnostics.py
+```
+
+This will create a `docs/report.txt` file with comprehensive system information.
+
+### Open Your First Notebook
+
+Now go to View >> Explorer. Open the notebooks folder, and click on `day1.ipynb`.
 
 - See where it says "Select Kernel" near the top right? Click that.. then pick "Python Environments"
-- Pick the top option with a star that should say something like `.venv (Python 3.12.x) .venv/bin/python Recommended`
-- If this doesn't come up, please go to the troubleshooting lab in the Setup folder.
+- Pick the option that says something like `.venv (Python 3.12.x) .venv/bin/python Recommended`
+- If this doesn't come up, check that your virtual environment is properly set up
 
-# CONGRATULATIONS!! You made it! The rest of the course is easy 😂
+## CONGRATULATIONS! You're ready to start your LLM engineering journey
+
+### Next Steps
+
+1. Review the `README.md` for project overview and objectives
+1. Check out `docs/learning-plan.md` for the 12-week learning roadmap
+1. Explore the repository structure and familiarize yourself with the folders
+1. Start with `notebooks/day1.ipynb` to build your first LLM application
+1. Use the `eval/` utilities to track your experiments from day one
+
+Happy learning!
