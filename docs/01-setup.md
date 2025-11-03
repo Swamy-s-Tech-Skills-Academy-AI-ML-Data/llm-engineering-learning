@@ -210,10 +210,10 @@ Now let's verify your setup is working correctly:
 
 ```powershell
 # If using uv (recommended):
-cd notebooks/01-setup && uv run python diagnostics.py
+cd notebooks/01-setup && uv run python 01_diagnostics.py
 
 # If using venv (make sure it's activated):
-cd notebooks/01-setup && python diagnostics.py
+cd notebooks/01-setup && python 01_diagnostics.py
 ```
 
 This will create a timestamped diagnostics report in `docs/reports/` with comprehensive system information.
@@ -251,7 +251,7 @@ When opening a notebook:
 1. Explore the repository structure and familiarize yourself with the folders
 1. Start with `.backup/notebooks/day1.ipynb` to build your first LLM application
 1. Use the `eval/` utilities to track your experiments from day one
-1. Run diagnostics regularly with `cd notebooks/01-setup && uv run python diagnostics.py`
+1. Run diagnostics regularly with `cd notebooks/01-setup && uv run python 01_diagnostics.py`
 
 ### Repository Structure Overview
 

@@ -51,7 +51,7 @@ cd llm-engineering-learning
 uv sync
 
 # Run diagnostics to verify setup
-cd notebooks/01-setup && uv run python diagnostics.py
+cd notebooks/01-setup && uv run python 01_diagnostics.py
 
 # (Optional) Smoke test logging + metrics modules
 uv run python -m eval.log_utils
