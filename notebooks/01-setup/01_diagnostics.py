@@ -290,55 +290,67 @@ class Diagnostics:
 
     def _step7_network_connectivity(self):
         self.log("\n===== Network Connectivity Check =====")
+        self.log(f"SSL Version: {ssl.OPENSSL_VERSION}")
+        
+        # Import requests (required)
         try:
-            self.log(f"SSL Version: {ssl.OPENSSL_VERSION}")
-    
             import requests
+        except ImportError:
+            self._log_error("requests package is required but not installed. Please install it using 'pip install requests'")
+            return
+        
+        # Import speedtest (optional)
+        speedtest_available = False
+        try:
             import speedtest  # Importing the speedtest-cli library
-    
-            # Basic connectivity check
-            urls = [
-                'https://www.google.com',
-                'https://www.cloudflare.com'
-            ]
-    
-            connected = False
-            for url in urls:
-                try:
-                    start_time = time.time()
-                    response = requests.get(url, timeout=10)
-                    elapsed_time = time.time() - start_time
-                    response.raise_for_status()
-                    self.log(f"✓ Connected to {url}")
-                    self.log(f"  Response time: {elapsed_time:.2f}s")
-    
-                    if elapsed_time > 2:
-                        self._log_warning(f"Slow response from {url}: {elapsed_time:.2f}s")
-                    connected = True
-                    break
-                except requests.exceptions.RequestException as e:
-                    self._log_warning(f"Failed to connect to {url}: {e}")
-                else:
-                    self.log("Basic connectivity OK")
-    
-            if not connected:
-                self._log_error("Failed to connect to any test URLs")
-                return
-    
-            # Bandwidth test using speedtest-cli
+            speedtest_available = True
+        except ImportError:
+            self._log_warning("speedtest-cli package is not installed. Bandwidth test will be skipped.")
+            self.log("  To install: pip install speedtest-cli")
+
+        # Basic connectivity check
+        urls = [
+            'https://www.google.com',
+            'https://www.cloudflare.com'
+        ]
+
+        connected = False
+        for url in urls:
+            try:
+                start_time = time.time()
+                response = requests.get(url, timeout=10)
+                elapsed_time = time.time() - start_time
+                response.raise_for_status()
+                self.log(f"✓ Connected to {url}")
+                self.log(f"  Response time: {elapsed_time:.2f}s")
+
+                if elapsed_time > 2:
+                    self._log_warning(f"Slow response from {url}: {elapsed_time:.2f}s")
+                connected = True
+                self.log("Basic connectivity OK")
+                break
+            except requests.exceptions.RequestException as e:
+                self._log_warning(f"Failed to connect to {url}: {e}")
+
+        if not connected:
+            self._log_error("Failed to connect to any test URLs")
+            return
+
+        # Bandwidth test using speedtest-cli (only if available)
+        if speedtest_available:
             self.log("\nPerforming bandwidth test using speedtest-cli...")
             try:
                 st = speedtest.Speedtest()
                 st.get_best_server()
                 download_speed = st.download()  # Bits per second
                 upload_speed = st.upload()      # Bits per second
-    
+
                 download_mbps = download_speed / 1e6  # Convert to Mbps
                 upload_mbps = upload_speed / 1e6
-    
+
                 self.log(f"Download speed: {download_mbps:.2f} Mbps")
                 self.log(f"Upload speed: {upload_mbps:.2f} Mbps")
-    
+
                 if download_mbps < 1:
                     self._log_warning("Download speed is low")
                 if upload_mbps < 0.5:
@@ -347,11 +359,6 @@ class Diagnostics:
                 self._log_error("Failed to retrieve speedtest configuration")
             except Exception as e:
                 self._log_warning(f"Bandwidth test failed: {e}")
-    
-        except ImportError:
-            self._log_error("Required packages are not installed. Please install them using 'pip install requests speedtest-cli'")
-        except Exception as e:
-            self._log_error(f"Network connectivity check failed: {e}")
 
 
     def _step8_environment_variables(self):
@@ -376,8 +383,11 @@ class Diagnostics:
             api_key = os.environ.get('OPENAI_API_KEY')
             if api_key:
                 self.log("OPENAI_API_KEY is set after calling load_dotenv()")
-                if not api_key.startswith('sk-proj-') or len(api_key)<12:
-                    self._log_warning("OPENAI_API_KEY format looks incorrect after calling load_dotenv()")
+                # Validate API key format: should start with 'sk-proj-' and be at least 12 characters
+                if not api_key.startswith('sk-proj-'):
+                    self._log_warning("OPENAI_API_KEY format looks incorrect: should start with 'sk-proj-'")
+                elif len(api_key) < 12:
+                    self._log_warning("OPENAI_API_KEY format looks incorrect: key appears too short (less than 12 characters)")
             else:
                 self._log_warning("OPENAI_API_KEY environment variable is not set after calling load_dotenv()")
         except Exception as e:
@@ -394,7 +404,24 @@ class Diagnostics:
     
             # Function to check if a path is within site-packages
             def is_in_site_packages(path):
-                return any(os.path.commonpath([path, sp]) == sp for sp in site_packages_paths)
+                if not path:
+                    return False
+                for sp in site_packages_paths:
+                    try:
+                        # commonpath requires paths on the same drive on Windows
+                        if os.path.commonpath([path, sp]) == sp:
+                            return True
+                    except (ValueError, OSError):
+                        # Paths on different drives or invalid paths
+                        # Check if path starts with site-packages path (safer approach)
+                        try:
+                            path_normalized = os.path.normpath(path)
+                            sp_normalized = os.path.normpath(sp)
+                            if path_normalized.startswith(sp_normalized):
+                                return True
+                        except (ValueError, OSError):
+                            continue
+                return False
     
             # Check for potential name conflicts in the current directory and sys.path
             conflict_names = ['openai.py', 'dotenv.py']

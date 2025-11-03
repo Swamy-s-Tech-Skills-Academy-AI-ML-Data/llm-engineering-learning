@@ -50,8 +50,8 @@ cd llm-engineering-learning
 # Sync environment and install dependencies
 uv sync
 
-# Run diagnostics to verify setup
-cd notebooks/01-setup && uv run python 01_diagnostics.py
+# (Optional) Run diagnostics to verify setup
+cd notebooks/01-setup && uv run python diagnostics.py
 
 # (Optional) Smoke test logging + metrics modules
 uv run python -m eval.log_utils
@@ -142,13 +142,31 @@ setx OPENAI_API_KEY "sk-..."  # (bash/zsh: export OPENAI_API_KEY="sk-...")
 # Then restart the shell so setx takes effect.
 ```
 
+### Run Diagnostics
+
+Verify your environment is properly configured by running the diagnostics script:
+
+```powershell
+cd notebooks/01-setup && uv run python diagnostics.py
+```
+
+This will check:
+- System information (OS, RAM, disk space)
+- Git repository configuration
+- Environment file (.env) and API keys
+- Python environment (virtualenv/conda)
+- Required package installations
+- Network connectivity
+
+A `report.txt` file will be generated in `notebooks/01-setup/` with detailed diagnostics.
+
 ### (Optional) Jupyter Smoke Test
 
 ```powershell
 uv run jupyter lab
 ```
 
-Close it after confirming it opens. Notebook: `notebooks/00_diagnostics.ipynb` will be added later.
+Close it after confirming it opens. See `notebooks/01-setup/` for setup diagnostics and troubleshooting notebooks.
 
 ### Updating Dependencies
 
