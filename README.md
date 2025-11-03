@@ -41,19 +41,18 @@ Early setup & curriculum alignment phase. Experiment scaffolding and evaluation 
 git clone <YOUR_FORK_URL> llm-engineering-learning
 cd llm-engineering-learning
 
-pip install uv
-uv self update
+# Create and activate virtual environment
+py -3.12 -m venv .venv
+. .venv/Scripts/Activate.ps1
 
-# Create environment via conda (preferred)
-conda env create -f environment.yml
-conda activate llm-engineering
+# Upgrade pip and install dependencies
+python -m pip install --upgrade pip
+pip install -r requirements.txt
 
 # (Optional) Smoke test logging + metrics modules
 python -m eval.log_utils
 python -m eval.metrics
 ```
-
-If conda is slow or fails, skip to the virtualenv option in Environment Setup below.
 
 ## 📚 Primary Course Reference
 
@@ -87,45 +86,7 @@ Supplemented with official docs, open papers, and community benchmarks.
 └─ docs/               # Deeper writeups & decision logs
 ```
 
-## 🛠 Environment Setup (Choose One)
-
-| Option | When to Prefer | Pros | Considerations |
-|--------|----------------|------|----------------|
-| Conda (Anaconda / Miniconda / Mamba) | Need compiled libs (PyTorch, CUDA later), reproducible YAML | Handles complex binaries | Slower solve (speed up with mamba) |
-| Native virtualenv / venv | Simpler, fast creation, fewer moving parts | Lightweight & quick | Manual handling of some binary deps |
-
-### Option A: Conda
-
-1. **Install Anaconda / Miniconda** (Windows installer: <https://docs.anaconda.com/anaconda/install/windows/>)
-
- (Optional) After install, speed up solving:
-
- ```powershell
- conda install -n base -c conda-forge mamba
- ```
-
-1. **Create Environment**
-
- ```powershell
- cd C:\Path\To\llm-engineering-learning
- conda env create -f environment.yml
- conda activate llm-engineering
- ```
-
- ArchiveError / long path issue? Enable long paths:
- <https://learn.microsoft.com/windows/win32/fileio/maximum-file-path-limitation>
-
-1. **(Optional) Jupyter Smoke Test**
-
- ```powershell
- jupyter lab
- ```
-
- Close it after confirming it opens. Notebook: `notebooks/00_diagnostics.ipynb` will be added later.
-
-Deactivate anytime with `conda deactivate`.
-
-### Option B: Virtualenv / venv
+## 🛠 Environment Setup
 
 PowerShell (Windows) shown; bash/zsh equivalents in comments.
 
@@ -137,24 +98,29 @@ pip --version
 py -0p # To check installed Python versions (3.11+ required)
 
 # 2. Create & activate virtual environment (force Python 3.12)
-pip install virtualenv
 py -3.12 -m venv .venv                  # Ensures the venv uses Python 3.12
 . .venv/Scripts/Activate.ps1            # (bash/zsh: source .venv/bin/activate)
 
 # 3. Upgrade pip
 python -m pip install --upgrade pip
 
-# 4. First install (Bootstrap alternative if no requirements.txt yet):
-pip install openai tiktoken python-dotenv
-pip freeze > requirements.txt
+# 4. Install dependencies
+pip install -r requirements.txt
 
-# 5. Install dependencies if requirements.txt exists
-pip install -r requirements.txt         # If the file exists (preferred)
-
-# 6. Provide your API key (either set env var or create .env)
+# 5. Provide your API key (either set env var or create .env)
 setx OPENAI_API_KEY "sk-..."            # (bash/zsh: export OPENAI_API_KEY="sk-...")
 # Then restart the shell so setx takes effect.
 ```
+
+### (Optional) Jupyter Smoke Test
+
+```powershell
+jupyter lab
+```
+
+Close it after confirming it opens. Notebook: `notebooks/00_diagnostics.ipynb` will be added later.
+
+Deactivate anytime with `deactivate`.
 
 Optional version pinning: add a `.python-version` file at repo root (used by pyenv / some IDEs). Example:
 
