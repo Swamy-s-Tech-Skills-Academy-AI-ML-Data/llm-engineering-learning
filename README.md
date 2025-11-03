@@ -41,19 +41,19 @@ Early setup & curriculum alignment phase. Experiment scaffolding and evaluation 
 git clone <YOUR_FORK_URL> llm-engineering-learning
 cd llm-engineering-learning
 
-pip install uv
-uv self update
+# Install uv (if not already installed)
+# Using standalone installer (recommended):
+#   powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+# Or via pip:
+#   pip install uv
 
-# Create environment via conda (preferred)
-conda env create -f environment.yml
-conda activate llm-engineering
+# Sync environment and install dependencies
+uv sync
 
 # (Optional) Smoke test logging + metrics modules
-python -m eval.log_utils
-python -m eval.metrics
+uv run python -m eval.log_utils
+uv run python -m eval.metrics
 ```
-
-If conda is slow or fails, skip to the virtualenv option in Environment Setup below.
 
 ## 📚 Primary Course Reference
 
@@ -73,94 +73,93 @@ Supplemented with official docs, open papers, and community benchmarks.
 7. Cost & performance optimization (caching, batching, model selection matrix)
 8. (Stretch) Fine‑tune / adapter experiment & comparison vs prompt engineering
 
-## 🧱 Repository Structure (Planned Draft)
+## 🧱 Repository Structure
 
 ```text
-├─ prompts/            # Prompt templates & variant experiments
-├─ data/               # Sample corpora / synthetic sets (non-sensitive)
-├─ rag/                # Retrieval prototypes (index builders, query flows)
-├─ eval/               # Evaluation scripts & metric outputs
+├─ .backup/            # Archived legacy files (environment.yml, requirements.txt)
 ├─ agents/             # Agent & tool orchestration experiments
+├─ data/               # Sample corpora / synthetic sets (non-sensitive)
+│  ├─ raw/             # Unprocessed source data
+│  └─ processed/       # Cleaned / chunked / vectorizable data
+├─ docs/               # Documentation, guides, and decision logs
+│  ├─ images/          # Documentation images
+│  ├─ reports/         # Generated reports and diagnostics
+│  └─ retros/          # Retrospective notes and learnings
+├─ eval/               # Evaluation scripts, metrics, and experiment logging
+├─ notebooks/          # Exploratory Jupyter notebooks & analysis
+│  └─ 01-setup/        # Setup diagnostics and troubleshooting
+├─ prompts/            # Prompt templates & variant experiments
+├─ rag/                # Retrieval prototypes (index builders, query flows)
+├─ scripts/            # Utility CLIs (ingest, batch eval, cost reporting)
+├─ src/                # Source code modules (when needed)
 ├─ tools/              # Custom tool / function call definitions
-├─ notebooks/          # Exploratory Jupyter / analysis
-├─ scripts/            # Utility CLIs (ingest, batch eval, etc.)
-└─ docs/               # Deeper writeups & decision logs
+├─ .gitignore          # Git ignore rules
+├─ LICENSE             # Project license
+├─ lychee.toml         # Link checker configuration
+├─ pyproject.toml      # Project dependencies and metadata (uv)
+├─ uv.lock             # Locked dependency versions (uv)
+└─ README.md            # This file
 ```
 
-## 🛠 Environment Setup (Choose One)
+## 🛠 Environment Setup
 
-| Option | When to Prefer | Pros | Considerations |
-|--------|----------------|------|----------------|
-| Conda (Anaconda / Miniconda / Mamba) | Need compiled libs (PyTorch, CUDA later), reproducible YAML | Handles complex binaries | Slower solve (speed up with mamba) |
-| Native virtualenv / venv | Simpler, fast creation, fewer moving parts | Lightweight & quick | Manual handling of some binary deps |
+This project uses [`uv`](https://github.com/astral-sh/uv) for fast dependency management and virtual environment handling.
 
-### Option A: Conda
+### Installing uv
 
-1. **Install Anaconda / Miniconda** (Windows installer: <https://docs.anaconda.com/anaconda/install/windows/>)
+**PowerShell (Windows):**
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
 
- (Optional) After install, speed up solving:
+**macOS/Linux:**
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
 
- ```powershell
- conda install -n base -c conda-forge mamba
- ```
+**Alternative (via pip):**
+```powershell
+pip install uv
+```
 
-1. **Create Environment**
-
- ```powershell
- cd C:\Path\To\llm-engineering-learning
- conda env create -f environment.yml
- conda activate llm-engineering
- ```
-
- ArchiveError / long path issue? Enable long paths:
- <https://learn.microsoft.com/windows/win32/fileio/maximum-file-path-limitation>
-
-1. **(Optional) Jupyter Smoke Test**
-
- ```powershell
- jupyter lab
- ```
-
- Close it after confirming it opens. Notebook: `notebooks/00_diagnostics.ipynb` will be added later.
-
-Deactivate anytime with `conda deactivate`.
-
-### Option B: Virtualenv / venv
-
-PowerShell (Windows) shown; bash/zsh equivalents in comments.
+### Setup Steps
 
 ```powershell
-# 1. Verify tooling
-python --version
-pip --version
+# 1. Sync environment (creates .venv and installs all dependencies from pyproject.toml)
+uv sync
 
-py -0p # To check installed Python versions (3.11+ required)
+# 2. (Optional) Activate the virtual environment manually
+. .venv/Scripts/Activate.ps1  # (bash/zsh: source .venv/bin/activate)
 
-# 2. Create & activate virtual environment (force Python 3.12)
-pip install virtualenv
-py -3.12 -m venv .venv                  # Ensures the venv uses Python 3.12
-. .venv/Scripts/Activate.ps1            # (bash/zsh: source .venv/bin/activate)
+# 3. Or use uv run prefix (no activation needed)
+uv run python -m eval.log_utils
 
-# 3. Upgrade pip
-python -m pip install --upgrade pip
-
-# 4. First install (Bootstrap alternative if no requirements.txt yet):
-pip install openai tiktoken python-dotenv
-pip freeze > requirements.txt
-
-# 5. Install dependencies if requirements.txt exists
-pip install -r requirements.txt         # If the file exists (preferred)
-
-# 6. Provide your API key (either set env var or create .env)
-setx OPENAI_API_KEY "sk-..."            # (bash/zsh: export OPENAI_API_KEY="sk-...")
+# 4. Provide your API key (either set env var or create .env)
+setx OPENAI_API_KEY "sk-..."  # (bash/zsh: export OPENAI_API_KEY="sk-...")
 # Then restart the shell so setx takes effect.
 ```
 
-Optional version pinning: add a `.python-version` file at repo root (used by pyenv / some IDEs). Example:
+### (Optional) Jupyter Smoke Test
 
-```text
-3.12
+```powershell
+uv run jupyter lab
 ```
+
+Close it after confirming it opens. Notebook: `notebooks/00_diagnostics.ipynb` will be added later.
+
+### Updating Dependencies
+
+```powershell
+# Update dependencies to latest compatible versions
+uv sync --upgrade
+
+# Add a new dependency
+uv add package-name
+
+# Remove a dependency
+uv remove package-name
+```
+
 
 ## 🔍 Evaluation Philosophy
 

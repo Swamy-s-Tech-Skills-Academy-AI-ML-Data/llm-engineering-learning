@@ -176,8 +176,14 @@ source .venv/bin/activate
 1. **Install dependencies**
 
 ```powershell
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+# Using uv (recommended):
+uv sync
+
+# Alternative using pip (if not using uv):
+# Note: requirements.txt has been moved to .backup/
+# You can use: pip install from pyproject.toml or export from uv:
+# uv pip compile pyproject.toml -o requirements.txt
+# pip install -r requirements.txt
 ```
 
 This will install all necessary packages including `openai`, `langchain`, `chromadb`, `transformers`, and more.

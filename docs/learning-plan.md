@@ -11,11 +11,12 @@ Concise, actionable companion to the main `README`. Use this to spin up your per
 
 ## 🚀 Quick Start (Minimal)
 
-1. Clone & create environment (after updating `environment.yml` if needed):
+1. Clone & create environment:
 
  ```bash
- conda env create -f environment.yml
- conda activate llm-engineering
+ # Install uv if needed (see README for installation instructions)
+ # Then:
+ uv sync
  ```
 
 1. Create baseline folders (only what you need now):
@@ -142,7 +143,7 @@ Consistency > intensity.
 
 ## ✅ Personal Setup Checklist
 
-- [ ] `environment.yml` resolved & environment activated
+- [ ] Virtual environment created and activated
 - [ ] API keys loaded via `.env` (never committed)
 - [ ] `notebooks/00_diagnostics.ipynb` runs successfully
 - [ ] `eval/experiment_log.csv` created
