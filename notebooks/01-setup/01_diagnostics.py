@@ -296,7 +296,7 @@ class Diagnostics:
         try:
             import requests
         except ImportError:
-            self._log_error("requests package is required but not installed. Please install it using 'pip install requests'")
+            self._log_error("requests package is required but not installed. Please install it using 'uv sync' (or 'uv pip install requests' for ad-hoc install)")
             return
         
         # Import speedtest (optional)
@@ -306,7 +306,7 @@ class Diagnostics:
             speedtest_available = True
         except ImportError:
             self._log_warning("speedtest-cli package is not installed. Bandwidth test will be skipped.")
-            self.log("  To install: pip install speedtest-cli")
+            self.log("  To install: uv sync (or 'uv pip install speedtest-cli' for ad-hoc install)")
 
         # Basic connectivity check
         urls = [
