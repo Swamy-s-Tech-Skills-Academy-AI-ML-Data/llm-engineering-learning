@@ -14,10 +14,9 @@ Concise, actionable companion to the main `README`. Use this to spin up your per
 1. Clone & create environment:
 
  ```bash
- py -3.12 -m venv .venv
- . .venv/Scripts/Activate.ps1  # (bash/zsh: source .venv/bin/activate)
- python -m pip install --upgrade pip
- pip install -r requirements.txt
+ # Install uv if needed (see README for installation instructions)
+ # Then:
+ uv sync
  ```
 
 1. Create baseline folders (only what you need now):
