@@ -11,11 +11,23 @@ from datetime import datetime
 
 class Diagnostics:
 
-    FILENAME = 'report.txt'
-    
     def __init__(self):
         self.errors = []
         self.warnings = []
+        
+        # Get the project root directory (2 levels up from this script)
+        script_dir = Path(__file__).parent
+        project_root = script_dir.parent.parent
+        reports_dir = project_root / 'docs' / 'reports'
+        
+        # Ensure reports directory exists
+        reports_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Set the report file path to docs/reports directory with timestamp
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        self.FILENAME = reports_dir / f'diagnostics-report-{timestamp}.txt'
+        
+        # Remove existing file if it exists
         if os.path.exists(self.FILENAME):
             os.remove(self.FILENAME)
 
@@ -31,8 +43,8 @@ class Diagnostics:
     def end(self):
         now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         self.log(f"\n\nCompleted diagnostics at {now}\n")
-        print("\nPlease send these diagnostics to me at ed@edwarddonner.com")
-        print(f"Either copy & paste the above output into an email, or attach the file {self.FILENAME} that has been created in this directory.")
+        print(f"\nDiagnostics report has been saved to: {self.FILENAME}")
+        print("This report contains comprehensive system and environment information for troubleshooting.")
     
 
     def _log_error(self, message):
