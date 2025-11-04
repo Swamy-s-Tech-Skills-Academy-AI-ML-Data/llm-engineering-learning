@@ -1,0 +1,58 @@
+Starting diagnostics at 2025-11-03 21:19:15
+
+===== System Information =====
+Operating System: Windows
+Windows Release: 11
+Windows Version: 10.0.26200
+Architecture: ('64bit', 'WindowsPE')
+Machine: AMD64
+Processor: Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+Total RAM: 31.69 GB
+Available RAM: 5.69 GB
+Free Disk Space: 489.75 GB
+
+===== File System Information =====
+Current Directory: D:\STSAAIMLDT\llm-engineering-learning\notebooks\01-setup
+Write permission: OK
+
+Files in Current Directory:
+ - 01_diagnostics.py
+ - 02_diagnostics.ipynb
+ - 03_troubleshooting.ipynb
+ - __pycache__
+
+===== Git Repository Information =====
+Git Repository Root: D:/STSAAIMLDT/llm-engineering-learning
+Current Commit: c978b1bd714c1c2c5385c4e784b2cdb8f9bda2c3
+Remote Origin: https://github.com/Swamy-s-Tech-Skills-Academy-AI-ML-Data/llm-engineering-learning.git
+
+===== Environment File Check =====
+.env file exists at: D:/STSAAIMLDT/llm-engineering-learning\.env
+OPENAI_API_KEY found in .env file
+
+===== Anaconda Environment Check =====
+No active Anaconda environment detected
+
+===== Virtualenv Check =====
+Virtualenv is active:
+Environment Path: D:\STSAAIMLDT\llm-engineering-learning\.venv
+Environment Name: .venv
+
+Python Environment:
+Python Version: 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
+Python Executable: D:\STSAAIMLDT\llm-engineering-learning\.venv\Scripts\python.exe
+
+Required Package Versions:
+openai: 2.6.0
+python-dotenv: 1.1.1
+requests: 2.32.5
+gradio: 5.49.1
+transformers: 4.57.1
+
+===== Network Connectivity Check =====
+SSL Version: OpenSSL 3.0.16 11 Feb 2025
+✓ Connected to https://www.google.com
+  Response time: 1.02s
+Basic connectivity OK
+
+Performing bandwidth test using speedtest-cli...

@@ -6,7 +6,7 @@ from __future__ import annotations
 import csv
 import os
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Dict, Iterable, List, Sequence
 
 # Canonical ordered field names (extend cautiously to preserve downstream parsers)
@@ -54,7 +54,7 @@ def log_run(row: Dict, path: str = DEFAULT_LOG_PATH, auto_id: bool = True) -> st
     if auto_id and not row.get("run_id"):
         row["run_id"] = _generate_run_id()
     if not row.get("timestamp"):
-        row["timestamp"] = datetime.utcnow().isoformat()
+        row["timestamp"] = datetime.now(timezone.utc).isoformat()
 
     normalized = _normalize_row(row)
     file_exists = os.path.exists(path)
