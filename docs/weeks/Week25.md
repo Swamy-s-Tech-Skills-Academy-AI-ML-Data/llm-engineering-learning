@@ -28,8 +28,12 @@ By the end of this week, you will:
 **Tasks (30 min):**
 
 1. **LangChain Setup** (5 min)
-   ```bash
-   pip install langchain langchain-openai langchain-azure-openai
+   ```powershell
+   # Using uv (recommended)
+   uv add langchain langchain-openai langchain-azure-openai
+   
+   # Or if already in pyproject.toml, just sync
+   uv sync
    ```
 
 2. **LangChain with OpenAI** (12 min)
@@ -93,8 +97,12 @@ By the end of this week, you will:
 **Tasks (30 min):**
 
 1. **LangGraph Setup** (5 min)
-   ```bash
-   pip install langgraph
+   ```powershell
+   # Using uv (recommended)
+   uv add langgraph
+   
+   # Or if already in pyproject.toml, just sync
+   uv sync
    ```
 
 2. **Build Agent Workflow** (25 min)
@@ -167,8 +175,12 @@ By the end of this week, you will:
 **Tasks (30 min):**
 
 1. **OpenAI Agent SDK Setup** (5 min)
-   ```bash
-   pip install openai[agents]
+   ```powershell
+   # Using uv (recommended)
+   uv add "openai[agents]"
+   
+   # Or if already in pyproject.toml, just sync
+   uv sync
    ```
 
 2. **Build Agent with SDK** (25 min)
@@ -218,8 +230,12 @@ By the end of this week, you will:
 **Tasks (30 min):**
 
 1. **Azure Agent SDK Setup** (5 min)
-   ```bash
-   pip install azure-ai-agents
+   ```powershell
+   # Using uv (recommended)
+   uv add azure-ai-agents
+   
+   # Or if already in pyproject.toml, just sync
+   uv sync
    ```
 
 2. **Build Agent with Azure SDK** (25 min)

@@ -30,51 +30,67 @@ By the end of this week, you will:
    - Verify Python 3.8+ is installed: `python --version`
    - If needed, install from [python.org](https://www.python.org/downloads/)
 
-2. **Create Project Structure** (10 min)
-   ```bash
-   # Create project directory
-   mkdir llm-engineering-learning
-   cd llm-engineering-learning
+2. **Install uv (if not already installed)** (5 min)
+   ```powershell
+   # Windows (PowerShell)
+   powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
    
-   # Create virtual environment
-   python -m venv venv
+   # macOS/Linux
+   curl -LsSf https://astral.sh/uv/install.sh | sh
    
-   # Activate virtual environment
-   # Windows:
-   venv\Scripts\activate
-   # Mac/Linux:
-   source venv/bin/activate
-   
-   # Create folder structure
-   mkdir notebooks prompts rag eval agents tools scripts data docs
-   mkdir data/raw data/processed
+   # Alternative (via pip)
+   pip install uv
    ```
 
-3. **Install Core Dependencies** (10 min)
-   ```bash
-   pip install openai anthropic python-dotenv requests jupyter
-   pip freeze > requirements.txt
+3. **Sync Environment & Install Dependencies** (10 min)
+   ```powershell
+   # Sync environment (creates .venv and installs all dependencies from pyproject.toml)
+   uv sync
+   
+   # This automatically:
+   # - Creates a virtual environment (.venv)
+   # - Installs all dependencies from pyproject.toml
+   # - Sets up the project structure
    ```
 
-4. **Create .gitignore** (5 min)
+4. **Create Folder Structure** (5 min)
+   ```bash
+   # Create additional folders if needed (some may already exist)
+   mkdir -p notebooks prompts rag eval agents tools scripts data/raw data/processed docs/weeks
+   ```
+
+5. **Create .gitignore** (5 min)
    ```bash
    # Create .gitignore file
-   echo "venv/
+   echo ".venv/
    .env
    __pycache__/
    *.pyc
    .ipynb_checkpoints/
    data/raw/*
-   !data/raw/.gitkeep" > .gitignore
+   !data/raw/.gitkeep
+   uv.lock" > .gitignore
+   ```
+
+6. **Verify Setup** (5 min)
+   ```powershell
+   # Check Python version
+   uv run python --version
+   
+   # Verify packages are installed
+   uv run python -c "import openai; print('OpenAI installed')"
+   uv run python -c "import anthropic; print('Anthropic installed')"
    ```
 
 **Exercise:**
-- [ ] Verify virtual environment is activated (you should see `(venv)` in terminal)
-- [ ] Verify all packages installed: `pip list`
-- [ ] Create a `README.md` with project description
+- [ ] Verify `uv` is installed: `uv --version`
+- [ ] Run `uv sync` to set up environment
+- [ ] Verify packages: `uv run python -c "import openai; import anthropic; print('Dependencies OK')"`
+- [ ] Review project structure matches expected folders
 
 **Resources:**
-- [Python Virtual Environments Guide](https://docs.python.org/3/tutorial/venv.html)
+- [uv Documentation](https://docs.astral.sh/uv/)
+- [uv Getting Started](https://docs.astral.sh/uv/getting-started/installation/)
 - Ed Donner's Course: Lesson 1-2 (Setup & Environment)
 
 ---
@@ -405,12 +421,12 @@ By the end of this week, you will:
    - Ensure all Week 1 deliverables are complete
 
 **Week 1 Deliverables Checklist:**
-- [ ] Virtual environment created and activated
+- [ ] Virtual environment created via `uv sync` (no manual activation needed)
 - [ ] `.env` file with API keys (not committed)
 - [ ] `scripts/api_client.py` working
 - [ ] `notebooks/00_diagnostics.ipynb` complete and passing
 - [ ] `notebooks/01_hello_llm.py` working
-- [ ] `requirements.txt` created
+- [ ] `pyproject.toml` and `uv.lock` in place (managed by `uv sync`)
 - [ ] `.gitignore` configured
 - [ ] Week 1 reflection completed
 

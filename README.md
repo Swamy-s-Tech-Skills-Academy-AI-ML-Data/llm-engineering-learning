@@ -191,11 +191,11 @@ pip install uv
 # 1. Sync environment (creates .venv and installs all dependencies from pyproject.toml)
 uv sync
 
-# 2. (Optional) Activate the virtual environment manually
-. .venv/Scripts/Activate.ps1  # (bash/zsh: source .venv/bin/activate)
-
-# 3. Or use uv run prefix (no activation needed)
+# 2. Use uv run prefix (no activation needed - recommended)
 uv run python -m eval.log_utils
+
+# 3. (Optional) Activate the virtual environment manually if needed
+# . .venv/Scripts/Activate.ps1  # (bash/zsh: source .venv/bin/activate)
 
 # 4. Provide your API key (either set env var or create .env)
 setx OPENAI_API_KEY "sk-..."  # (bash/zsh: export OPENAI_API_KEY="sk-...")
