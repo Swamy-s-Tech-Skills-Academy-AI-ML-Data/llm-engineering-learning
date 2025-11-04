@@ -8,6 +8,13 @@ Guidance for AI pair programming in this repository. These conventions help prod
 
 LLM engineering experimentation: prompt design, RAG, agents, tool/function calling, evaluation harnesses, lightweight deployment.
 
+**Learning Path**: This repository follows a structured 20-week learning plan. See `docs/learning-plan.md` for the master document and `docs/weeks/Week1.md` through `docs/weeks/Week20.md` for detailed weekly guides.
+
+**Key Deep Dives**:
+- **Week 3**: Chain-of-Thought (CoT) - Complete guide with patterns, examples, and best practices
+- **Week 5**: ReAct (Reasoning + Acting) - Full implementation guide with tool integration
+- **Week 14**: Reasoning Patterns Deep Dive - All patterns (CoT, ReAct, ToT, PoT, etc.)
+
 ---
 
 ## ✅ General Principles

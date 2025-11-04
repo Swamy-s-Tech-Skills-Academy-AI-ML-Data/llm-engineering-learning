@@ -1,26 +1,33 @@
-# ArchitectJourney Repository Verification and Content Enhancement
+# LLM Engineering Learning Repository Verification and Content Enhancement
 
 ## Context
 
-You are working with **ArchitectJourney**, a comprehensive learning and reference repository for aspiring software architects. The repository combines development principles, AI/ML, DevOps, leadership frameworks, and strategic insights across:
+You are working with **llm-engineering-learning**, a comprehensive learning repository for mastering LLM Engineering. The repository is designed to accompany **Ed Donner's "LLM Engineering: Master AI, Large Language Models & Agents"** Udemy course and provides:
 
-- **9 Progressive Levels** (Foundation Mastery → Leadership, Strategy & Innovation)
-- **9-Phase LeadArchitect Program** (Reboot → Leadership Impact)
-- **13 Reference Library Domains** (Development Fundamentals, Programming Languages, AI/ML, Data Science, Cloud Platforms, DevOps, Security & Governance, Enterprise Architecture, Product Delivery, Leadership & Strategy, Networking & Infrastructure, Emerging Technologies, Professional Growth)
+- **20-Week Progressive Learning Path** (Foundations → Mastery)
+- **5 Days × 30 Minutes per Week** structured learning
+- **Deep Dives**: Chain-of-Thought (CoT), ReAct (Reasoning + Acting), and reasoning patterns
+- **Practical Projects**: From simple scripts to production-ready applications
 
 Target Folders for Verification:
 
-- `01_ReferenceLibrary/`
-- `02_LeadArchitect-Learning/`
-- `docs/`
-- `.github/`
+- `docs/learning-plan.md` (Master document)
+- `docs/weeks/` (Week1.md through Week20.md)
+- `prompts/` (Prompt templates)
+- `agents/` (Agent implementations)
+- `tools/` (Tool definitions)
+- `eval/` (Evaluation frameworks)
+- `rag/` (RAG systems)
+- `scripts/` (CLI utilities)
+- `notebooks/` (Exploratory notebooks)
+- `.github/` (Copilot instructions)
 
 Primary Objective:
-Perform a COMPREHENSIVE audit of the repository using ArchitectJourney-specific educational standards and quality criteria. Verify file contents, run structured checks, and produce actionable reports with suggestions and fixes.
+Perform a COMPREHENSIVE audit of the repository using LLM Engineering learning standards and quality criteria. Verify file contents, run structured checks, and produce actionable reports with suggestions and fixes.
 
 ---
 
-## ArchitectJourney-Specific Verification Checks
+## LLM Engineering Learning Verification Checks
 
 ### A. **File Content Inspection**
 
@@ -30,10 +37,12 @@ Perform a COMPREHENSIVE audit of the repository using ArchitectJourney-specific 
 
 ### B. **Learning Path Alignment**
 
-- Verify content aligns with correct Level (1-9) or Phase (01-09)
+- Verify content aligns with correct Week (1-20)
 - Validate prerequisites are appropriate and documented
-- Check learning progression is logical and sequential
-- Ensure cross-references between levels/phases are accurate
+- Check learning progression is logical and sequential (Week 1 → Week 20)
+- Ensure cross-references between weeks are accurate
+- Validate day-by-day structure (5 days × 30 minutes)
+- Check alignment with Ed Donner's course content
 
 ### C. **Content Accuracy & Quality**
 
@@ -42,16 +51,19 @@ Perform a COMPREHENSIVE audit of the repository using ArchitectJourney-specific 
 - Check alignment with architectural best practices and design patterns
 - Validate examples are current, relevant, and runnable
 
-### D. **ArchitectJourney Metadata Requirements**
+### D. **LLM Engineering Learning Metadata Requirements**
 
 Check for presence of:
 
-- Learning Level / Phase designation (e.g., Level 3, Phase 02)
-- Prerequisites and dependencies
+- Week designation (Week 1-20)
+- Day-by-day breakdown (Day 1-5)
+- Prerequisites and dependencies (references to previous weeks)
 - Learning Objectives (clear, measurable, specific)
-- Core Topics and Practical Projects
-- Related Topics and cross-references to other levels/phases
-- Estimated Learning Time (where applicable)
+- Core Topics (CoT, ReAct, RAG, Agents, etc.)
+- Practical Projects and Exercises
+- Deliverables per week
+- Time Commitment (5 days × 30 minutes = 2.5 hours/week)
+- Deep Dive sections (CoT in Week 3, ReAct in Week 5, Reasoning in Week 14)
 
 ### E. **Naming Convention Compliance**
 
@@ -124,30 +136,31 @@ Check for presence of:
 - Validate visual clarity and accuracy
 - Ensure diagrams support learning objectives
 
-### O. **Cross-Domain Integration**
+### O. **Cross-Week Integration**
 
-- Check proper references between domains
-- Verify content connections across levels
-- Validate integration between reference library and LeadArchitect tracks
-- Ensure consistency in terminology and concepts
+- Check proper references between weeks
+- Verify content connections across weeks (Week 3 CoT → Week 5 ReAct → Week 14 Reasoning)
+- Validate integration between learning plan and weekly guides
+- Ensure consistency in terminology (CoT, ReAct, tokens, context windows, etc.)
+- Check that concepts build progressively
 
 ---
 
-## ArchitectJourney Content Standards
+## LLM Engineering Learning Content Standards
 
 ### Learning Structure
 
-- **9-Level Foundation**: Progressive from Level 1 (Foundation Mastery) to Level 9 (Leadership, Strategy & Innovation)
-- **9-Phase LeadArchitect**: Intensive program organized into 9 phases, each with 9 specialized clusters
-- **13 Reference Domains**: Comprehensive coverage of essential architectural knowledge areas
-- **Progressive Complexity**: Content builds from foundational concepts to advanced strategic decision-making
+- **20-Week Path**: Progressive from Week 1 (Foundations) to Week 20 (Mastery)
+- **Weekly Structure**: 5 days × 30 minutes = 2.5 hours per week
+- **Deep Dives**: Comprehensive coverage of CoT (Week 3), ReAct (Week 5), Reasoning Patterns (Week 14)
+- **Progressive Complexity**: Content builds from basics (API calls) to advanced (multi-agent systems, production)
 
 ### Content Organization
 
-- **By Level**: Content clearly indicates which level(s) it addresses
-- **By Domain**: Content properly categorized in 01_ReferenceLibrary under correct domain
-- **By Phase**: LeadArchitect content organized by phase and cluster
-- **By Learning Modality**: Mix of conceptual explanation, code examples, diagrams, and practical projects
+- **By Week**: Content clearly indicates which week(s) it addresses (Week 1-20)
+- **By Day**: Each week has 5 days with specific tasks
+- **By Topic**: Organized by theme (Foundations, Prompt Engineering, Agents, RAG, etc.)
+- **By Learning Modality**: Mix of conceptual explanation, code examples, exercises, and practical projects
 
 ### Quality Requirements
 
@@ -177,10 +190,10 @@ Check for presence of:
 
 ```json
 {
-  "repo_name": "ArchitectJourney",
+  "repo_name": "llm-engineering-learning",
   "total_files_checked": 0,
   "total_issues_found": 0,
-  "architect_journey_compliance_percentage": 0.0,
+  "learning_plan_compliance_percentage": 0.0,
   "high_severity_count": 0,
   "medium_severity_count": 0,
   "low_severity_count": 0,
@@ -195,8 +208,8 @@ For each file:
 ```json
 {
   "file_path": "string",
-  "level_phase_designation": "string (e.g., Level 3 or Phase 02 - Cluster C)",
-  "domain_category": "string (e.g., Development Fundamentals, AI-ML, Leadership & Strategy)",
+  "week_designation": "string (e.g., Week 3 - Chain-of-Thought Deep Dive)",
+  "topic_category": "string (e.g., Prompt Engineering, Agents, RAG, Evaluation)",
   "checks_passed": ["list of check keys, e.g., A,B,C,F,G,I"],
   "learning_metadata_present": true/false,
   "content_quality_score": "0-100",
@@ -210,10 +223,10 @@ For each file:
       "description": "string",
       "suggested_fix": "string",
       "fix_type": "replace|delete|add|rename|format|link-fix|metadata-add",
-      "aj_violation_type": "string (e.g., missing-objectives, broken-link, outdated-pattern)"
+      "llm_learning_violation_type": "string (e.g., missing-objectives, broken-link, outdated-pattern, missing-deep-dive)"
     }
   ],
-  "overall_status": "aj_compliant|needs_updates|remove",
+  "overall_status": "learning_plan_compliant|needs_updates|remove",
   "quick_fix_patch": "string or null"
 }
 ```
@@ -222,11 +235,11 @@ For each file:
 
 ```json
 {
-  "level_coverage": { "Level1": 0, "Level2": 0, "..": 0, "Level9": 0 },
-  "phase_coverage": { "Phase01": 0, "Phase02": 0, "..": 0, "Phase09": 0 },
-  "domain_distribution": { "Development": 0, "AI-ML": 0, "..": 0 },
+  "week_coverage": { "Week1": 0, "Week2": 0, "..": 0, "Week20": 0 },
+  "topic_distribution": { "Foundations": 0, "Prompt Engineering": 0, "Agents": 0, "RAG": 0, "Evaluation": 0, "Production": 0 },
+  "deep_dive_coverage": { "CoT": false, "ReAct": false, "Reasoning Patterns": false },
   "progression_score": "0-100",
-  "gap_analysis": ["identified learning gaps", "missing domain coverage"]
+  "gap_analysis": ["identified learning gaps", "missing weekly guides", "incomplete deep dives"]
 }
 ```
 
@@ -319,16 +332,16 @@ Deliverables:
 
 Behavioral expectations:
 
-- **ArchitectJourney-First Approach**: Prioritize learning effectiveness and alignment with 9-level and 9-phase structures
-- **Educational Quality Focus**: Flag content that doesn't meet architectural excellence standards
-- **Learning Path Integrity**: Ensure content fits logically within levels and phases with proper prerequisites
-- **Practical Relevance**: Verify content provides actionable architectural guidance and decision-making frameworks
-- **Cross-Domain Integration**: Validate proper connections between learning tracks and domains
-- **Metadata Compliance**: Prioritize missing learning objectives and prerequisites as high-severity
-- **Progressive Complexity**: Ensure content properly builds from foundational to advanced concepts
-- **Pattern Excellence**: Verify architectural patterns include intent, participants, when/when-not-to-use, and trade-offs
-- **Code Quality**: Validate examples follow best practices and are runnable
-- **Visual Communication**: Check that diagrams effectively support learning objectives
+- **LLM Engineering Learning-First Approach**: Prioritize learning effectiveness and alignment with 20-week structure
+- **Educational Quality Focus**: Flag content that doesn't meet LLM engineering standards
+- **Learning Path Integrity**: Ensure content fits logically within weeks with proper prerequisites (Week N requires Week N-1)
+- **Practical Relevance**: Verify content provides actionable LLM engineering guidance and hands-on exercises
+- **Cross-Week Integration**: Validate proper connections between weeks (CoT Week 3 → ReAct Week 5 → Reasoning Week 14)
+- **Metadata Compliance**: Prioritize missing learning objectives, deliverables, and day-by-day structure as high-severity
+- **Progressive Complexity**: Ensure content properly builds from basics (API calls) to advanced (multi-agent systems)
+- **Pattern Excellence**: Verify reasoning patterns (CoT, ReAct, ToT, etc.) include examples, use cases, and best practices
+- **Code Quality**: Validate examples follow best practices, are runnable, and match copilot-instructions.md conventions
+- **Deep Dive Completeness**: Ensure Week 3 (CoT), Week 5 (ReAct), and Week 14 (Reasoning) have comprehensive deep dives
 
 ---
 
