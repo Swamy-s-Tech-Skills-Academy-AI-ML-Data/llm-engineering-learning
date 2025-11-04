@@ -222,7 +222,10 @@ Before moving forward, can you:
 
 ## 📚 Week-by-Week Detailed Breakdown
 
+> **📖 Detailed Weekly Guides:** Each week has a comprehensive guide with day-by-day breakdowns, exercises, and deep dives. See `docs/weeks/Week1.md` through `docs/weeks/Week20.md` for complete details.
+
 ### Week 1: Foundations & Environment (Days 1-7)
+**📖 Full Guide:** [`docs/weeks/Week1.md`](weeks/Week1.md)
 
 **Day 1-2: Setup**
 - Complete the "Getting Started" section above
@@ -253,6 +256,7 @@ Before moving forward, can you:
 - **Deliverable:** Working diagnostics notebook
 
 ### Week 2: Python & Data Handling (Days 8-14)
+**📖 Full Guide:** [`docs/weeks/Week2.md`](weeks/Week2.md)
 
 **Day 8-9: Python for LLM Engineering**
 - Review Python basics (lists, dicts, functions)
@@ -278,6 +282,7 @@ Before moving forward, can you:
 - **Deliverable:** Working `scripts/ingest.py`
 
 ### Week 3: LLM & Prompt Engineering (Days 15-21)
+**📖 Full Guide:** [`docs/weeks/Week3.md`](weeks/Week3.md) - **Includes Chain-of-Thought (CoT) Deep Dive**
 
 **Day 15-16: Prompt Fundamentals**
 - What makes a good prompt?
@@ -334,7 +339,7 @@ Before moving forward, can you:
 | 2 | Python & Data Handling | Clean data ingestion + utilities | `scripts/ingest.py` |
 | 3 | LLM & Prompt Engineering | Prompt patterns + evaluation harness | Prompt variant matrix |
 | 4 | Bots & Scraping | Basic scraper feeding LLM summarizer | News/website summarizer |
-| 5 | Multi-Agent Intro | Simple multi-tool agent reasoning log | Agent loop prototype |
+| 5 | Multi-Agent Intro + ReAct | Simple multi-tool agent reasoning log | Agent loop prototype |
 | 6 | Structured Outputs & Orchestration | Reliable JSON / tool calling | Function call schema set |
 | 7 | Optimization & Performance | Latency + token cost reductions | Before/after metrics |
 | 8 | Applied Mini Projects | One polished micro-app | Gradio or CLI app |
@@ -342,8 +347,22 @@ Before moving forward, can you:
 | 10 | Deployment & Scaling | Local + lightweight cloud deploy | Deployment script |
 | 11 | Capstone Build | Integrated RAG + tools + eval | Capstone repo folder |
 | 12 | Review & Deep Dives | Retrospective + advanced experiments | Lessons learned doc |
+| 13 | Advanced RAG | Hybrid search + reranking | Advanced RAG system |
+| 14 | Reasoning Patterns Deep Dive | Mastery of reasoning patterns | Pattern selection guide |
+| 15 | Multi-Agent Systems | Agent coordination + communication | Multi-agent system |
+| 16 | Production Optimization | Cost + performance optimization | Production-ready system |
+| 17 | Advanced Evaluation | Comprehensive evaluation framework | Custom metrics system |
+| 18 | Specialized Applications | Domain-specific applications | Custom use cases |
+| 19 | Research & Experimentation | Research framework | Experimentation system |
+| 20 | Mastery & Beyond | Complete mastery + portfolio | Advanced portfolio |
 
 Adapt pacing: (a) Double speed → collapse weeks 1–2, 5–6, 7–8, 9–10. (b) Half time → focus on Weeks 1–6 + Capstone sampling ideas from later weeks.
+
+> **📖 Weekly Guides Available:** Detailed day-by-day guides for all 20 weeks are available in `docs/weeks/`:
+> - **Week 3:** Deep dive on **Chain-of-Thought (CoT)** - Complete guide with patterns, examples, and best practices
+> - **Week 5:** Deep dive on **ReAct (Reasoning + Acting)** - Full implementation guide
+> - **Week 14:** **Reasoning Patterns Deep Dive** - All patterns (CoT, ReAct, ToT, PoT, etc.)
+> - **Weeks 1-20:** Complete progressive learning path from basics to mastery
 
 ---
 
