@@ -97,7 +97,16 @@ By the end of this week, you will:
    
    Create `.env` file:
    ```env
+   # OpenAI
    OPENAI_API_KEY=sk-your-key-here
+   
+   # Azure OpenAI
+   AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com
+   AZURE_OPENAI_API_KEY=your-azure-key-here
+   AZURE_OPENAI_API_VERSION=2024-02-15-preview
+   AZURE_OPENAI_DEPLOYMENT_NAME=gpt-4
+   
+   # Other providers (optional)
    ANTHROPIC_API_KEY=sk-ant-your-key-here
    ```
 
@@ -108,6 +117,7 @@ By the end of this week, you will:
    import os
    from dotenv import load_dotenv
    from openai import OpenAI
+   from openai import AzureOpenAI
    
    # Load environment variables
    load_dotenv()
@@ -119,24 +129,56 @@ By the end of this week, you will:
            raise ValueError("OPENAI_API_KEY not found in .env file")
        return OpenAI(api_key=api_key)
    
-   def test_api_connection():
+   def get_azure_openai_client():
+       """Initialize and return Azure OpenAI client"""
+       endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
+       api_key = os.getenv("AZURE_OPENAI_API_KEY")
+       api_version = os.getenv("AZURE_OPENAI_API_VERSION", "2024-02-15-preview")
+       
+       if not endpoint or not api_key:
+           raise ValueError("Azure OpenAI credentials not found in .env file")
+       
+       return AzureOpenAI(
+           api_key=api_key,
+           azure_endpoint=endpoint,
+           api_version=api_version
+       )
+   
+   def test_api_connection(provider="openai"):
        """Test if API connection works"""
        try:
-           client = get_openai_client()
-           response = client.chat.completions.create(
-               model="gpt-3.5-turbo",
-               messages=[{"role": "user", "content": "Say hello!"}],
-               max_tokens=10
-           )
-           print("✅ API connection successful!")
+           if provider == "openai":
+               client = get_openai_client()
+               response = client.chat.completions.create(
+                   model="gpt-3.5-turbo",
+                   messages=[{"role": "user", "content": "Say hello!"}],
+                   max_tokens=10
+               )
+           elif provider == "azure_openai":
+               client = get_azure_openai_client()
+               deployment = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME", "gpt-35-turbo")
+               response = client.chat.completions.create(
+                   model=deployment,  # Azure uses deployment name
+                   messages=[{"role": "user", "content": "Say hello!"}],
+                   max_tokens=10
+               )
+           else:
+               raise ValueError(f"Unknown provider: {provider}")
+           
+           print(f"✅ {provider.upper()} API connection successful!")
            print(f"Response: {response.choices[0].message.content}")
            return True
        except Exception as e:
-           print(f"❌ API connection failed: {e}")
+           print(f"❌ {provider.upper()} API connection failed: {e}")
            return False
    
    if __name__ == "__main__":
-       test_api_connection()
+       # Test both providers
+       print("Testing OpenAI...")
+       test_api_connection("openai")
+       
+       print("\nTesting Azure OpenAI...")
+       test_api_connection("azure_openai")
    ```
 
 **Exercise:**

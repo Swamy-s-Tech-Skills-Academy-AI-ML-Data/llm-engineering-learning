@@ -148,6 +148,14 @@ python hello_llm.py
 
 Before diving into LLM Engineering, ensure you have these foundational skills:
 
+**Note**: This learning path supports multiple programming languages and frameworks. You can focus on:
+- **Backend**: Python, Go, Node.js, .NET Web API
+- **Frontend**: React, Angular, Next.js, Blazor
+- **Orchestration**: .NET Aspire
+- **LLM Providers**: OpenAI, Azure OpenAI
+
+Start with Python for basics (Weeks 1-5), then expand to other languages (Weeks 22-24).
+
 ### Essential Prerequisites
 
 **Python Basics (Required)**
@@ -355,14 +363,29 @@ Before moving forward, can you:
 | 18 | Specialized Applications | Domain-specific applications | Custom use cases |
 | 19 | Research & Experimentation | Research framework | Experimentation system |
 | 20 | Mastery & Beyond | Complete mastery + portfolio | Advanced portfolio |
+| 21 | Azure OpenAI Deep Dive | Azure OpenAI mastery + multi-provider patterns | Multi-provider abstraction |
+| 22 | Multi-Language Implementation | Python, Go, Node.js LLM applications | Cross-language patterns |
+| 23 | Frontend Integration | React, Angular, Next.js LLM apps | Frontend LLM applications |
+| 24 | .NET Ecosystem | Aspire, Web API, Blazor LLM apps | Full-stack .NET applications |
+| 25 | Agentic Frameworks | LangChain, LangGraph, Agent SDKs | Framework mastery |
 
 Adapt pacing: (a) Double speed → collapse weeks 1–2, 5–6, 7–8, 9–10. (b) Half time → focus on Weeks 1–6 + Capstone sampling ideas from later weeks.
 
-> **📖 Weekly Guides Available:** Detailed day-by-day guides for all 20 weeks are available in `docs/weeks/`:
+> **📖 Weekly Guides Available:** Detailed day-by-day guides for all 25 weeks are available in `docs/weeks/`:
 > - **Week 3:** Deep dive on **Chain-of-Thought (CoT)** - Complete guide with patterns, examples, and best practices
 > - **Week 5:** Deep dive on **ReAct (Reasoning + Acting)** - Full implementation guide
 > - **Week 14:** **Reasoning Patterns Deep Dive** - All patterns (CoT, ReAct, ToT, PoT, etc.)
-> - **Weeks 1-20:** Complete progressive learning path from basics to mastery
+> - **Week 21:** **Azure OpenAI Deep Dive** - Azure OpenAI setup, multi-provider patterns
+> - **Week 22:** **Multi-Language Implementation** - Python, Go, Node.js with OpenAI & Azure OpenAI
+> - **Week 23:** **Frontend Integration** - React, Angular, Next.js with LLM integration
+> - **Week 24:** **.NET Ecosystem** - Aspire, Web API, Blazor with LLM
+> - **Week 25:** **Agentic Frameworks** - LangChain, LangGraph, OpenAI/Azure Agent SDKs
+> - **Weeks 1-25:** Complete progressive learning path from basics to multi-platform mastery
+
+**Multi-Provider & Multi-Language Support:**
+- All weeks include both **OpenAI** and **Azure OpenAI** implementations
+- Weeks 22-24 cover **multiple languages** (Python, Go, Node.js, Angular, React, Next.js, .NET)
+- Week 25 covers **agentic frameworks** (LangChain, LangGraph, SDKs)
 
 ---
 
