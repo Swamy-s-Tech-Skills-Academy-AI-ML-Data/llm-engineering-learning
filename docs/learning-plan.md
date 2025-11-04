@@ -1,61 +1,186 @@
 # LLM Engineering Learning Plan
 
-(Originally `starter.md` at repo root — relocated for clarity.)
+**Complete 25-week guide for mastering LLM Engineering from basics to multi-platform mastery**
 
-<!-- BEGIN ORIGINAL CONTENT -->
-## Starter Guide: LLM Engineering Study Blueprint
-
-Concise, actionable companion to the main `README`. Use this to spin up your personal learning workspace, pace the curriculum, and track progress with intent—not just consume videos.
+This learning plan is designed to accompany **Ed Donner's "LLM Engineering: Master AI, Large Language Models & Agents"** Udemy course. Use this as your structured roadmap to build practical skills alongside the course content.
 
 ---
 
-## 🚀 Quick Start (Minimal)
+## 📋 Table of Contents
 
-1. Clone & create environment:
-
- ```bash
- # Install uv if needed (see README for installation instructions)
- # Then:
- uv sync
- ```
-
-1. Create baseline folders (only what you need now):
-
- `prompts/`, `notebooks/`, `rag/`, `eval/`, `agents/`, `scripts/`, `data/raw/`, `data/processed/`
-
-1. Add a first notebook: `notebooks/00_diagnostics.ipynb` (token tests, API keys load, simple embedding call).
-
-1. Start an experiment log: `eval/experiment_log.csv` (see Metrics section).
-
-1. Commit early: small, frequent, tagged by week (`week01_prompt_basics`).
+1. [Quick Start](#-quick-start)
+2. [Prerequisites](#-prerequisites)
+3. [25-Week Learning Path](#-25-week-learning-path)
+4. [Learning Structure](#-learning-structure)
+5. [Workflow & Best Practices](#-workflow--best-practices)
+6. [Progress Tracking](#-progress-tracking)
+7. [Troubleshooting](#-troubleshooting)
+8. [Resources](#-resources)
 
 ---
 
-## 📅 12‑Week Baseline Plan (30 min / day)
+## 🚀 Quick Start
 
-| Week | Theme | Primary Outcomes | Anchor Artifact |
-|------|-------|------------------|-----------------|
-| 1 | Foundations & Environment | Reproducible env, API key management | Diagnostics notebook |
-| 2 | Python & Data Handling | Clean data ingestion + utilities | `scripts/ingest.py` |
-| 3 | LLM & Prompt Engineering | Prompt patterns + evaluation harness | Prompt variant matrix |
-| 4 | Bots & Scraping | Basic scraper feeding LLM summarizer | News/website summarizer |
-| 5 | Multi-Agent Intro | Simple multi-tool agent reasoning log | Agent loop prototype |
-| 6 | Structured Outputs & Orchestration | Reliable JSON / tool calling | Function call schema set |
-| 7 | Optimization & Performance | Latency + token cost reductions | Before/after metrics |
-| 8 | Applied Mini Projects | One polished micro-app | Gradio or CLI app |
-| 9 | Autonomous / Planning Agents | Planner vs reactive comparison | Planning eval notes |
-| 10 | Deployment & Scaling | Local + lightweight cloud deploy | Deployment script |
-| 11 | Capstone Build | Integrated RAG + tools + eval | Capstone repo folder |
-| 12 | Review & Deep Dives | Retrospective + advanced experiments | Lessons learned doc |
+### Your First 5 Minutes
 
-Adapt pacing: (a) Double speed → collapse weeks 1–2, 5–6, 7–8, 9–10. (b) Half time → focus on Weeks 1–6 + Capstone sampling ideas from later weeks.
+1. **Set up environment:**
+   ```bash
+   python --version  # Verify Python 3.8+
+   python -m venv venv
+   venv\Scripts\activate  # Windows
+   pip install openai python-dotenv
+   ```
+
+2. **Get API keys:**
+   - OpenAI: [platform.openai.com/api-keys](https://platform.openai.com/api-keys)
+   - Azure OpenAI: [portal.azure.com](https://portal.azure.com) → Create Azure OpenAI resource
+
+3. **Create `.env` file:**
+   ```env
+   OPENAI_API_KEY=sk-your-key-here
+   AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com
+   AZURE_OPENAI_API_KEY=your-azure-key-here
+   AZURE_OPENAI_API_VERSION=2024-02-15-preview
+   ```
+
+4. **Start Week 1:** Open [`docs/weeks/Week1.md`](weeks/Week1.md) and follow day-by-day
 
 ---
 
-## 🧱 Suggested Working Structure
+## 🎯 Prerequisites
 
-```text
-notebooks/          # Explorations, each prefixed 00_, 01_, ...
+### Essential Skills
+
+**Python Basics** (Required for Weeks 1-21)
+- Variables, data types, functions
+- Working with JSON, file I/O
+- Error handling (try/except)
+- List comprehensions
+
+**Other Languages** (Weeks 22-24)
+- **Go**: Basic syntax, interfaces, error handling
+- **Node.js**: JavaScript/TypeScript, async/await
+- **Frontend**: React, Angular, or Next.js basics
+- **.NET**: C# basics, ASP.NET Core
+
+**API Concepts** (Helpful)
+- REST API basics
+- API keys and authentication
+- JSON response format
+
+### Self-Assessment
+
+Before starting, can you:
+- [ ] Write a Python function that processes a list?
+- [ ] Make an HTTP request and parse JSON response?
+- [ ] Create and activate a virtual environment?
+- [ ] Explain what an API key is?
+
+**If "No" to 2+ questions:** Spend 2-3 days on Python basics first.
+
+---
+
+## 📅 25-Week Learning Path
+
+**Structure:** 5 days × 30 minutes = 2.5 hours per week  
+**Total Time:** ~62.5 hours  
+**Multi-Platform from Week 1:** OpenAI + Azure OpenAI + Python + Go + Node.js + Frontend + .NET  
+**Progressive Multi-Platform Introduction:**
+- **Weeks 1-5**: Python with OpenAI + Azure OpenAI (dual provider from start)
+- **Weeks 6-10**: Add Go and Node.js (backend languages)
+- **Weeks 11-15**: Add React, Angular, Next.js (frontend frameworks)
+- **Weeks 16-20**: Add .NET Web API, Blazor, Aspire (.NET ecosystem)
+- **Weeks 21-25**: Master all platforms + frameworks (LangChain, LangGraph, SDKs)
+
+| Week | Theme | Primary Outcomes | Platforms | Deep Dives | Guide |
+|------|-------|------------------|-----------|------------|-------|
+| **Foundation Phase - Multi-Platform from Start** |
+| 1 | Foundations & Environment | Reproducible env, API key management | **OpenAI + Azure OpenAI** (Python) | Dual provider setup | [`Week1.md`](weeks/Week1.md) |
+| 2 | Python & Data Handling | Clean data ingestion + utilities | **OpenAI + Azure OpenAI** (Python) | Text chunking strategies | [`Week2.md`](weeks/Week2.md) |
+| 3 | LLM & Prompt Engineering | Prompt patterns + evaluation | **OpenAI + Azure OpenAI** (Python) | **Chain-of-Thought (CoT)** | [`Week3.md`](weeks/Week3.md) |
+| 4 | Bots & Scraping | Basic scraper + LLM summarizer | **OpenAI + Azure OpenAI** (Python) | Web scraping + integration | [`Week4.md`](weeks/Week4.md) |
+| 5 | Multi-Agent Intro + ReAct | Agent reasoning log | **OpenAI + Azure OpenAI** (Python) | **ReAct (Reasoning + Acting)** | [`Week5.md`](weeks/Week5.md) |
+| **Intermediate Phase - Add Backend Languages** |
+| 6 | Structured Outputs & Orchestration | Reliable JSON / tool calling | **OpenAI + Azure OpenAI** (Python, **Go intro**) | Function calling APIs | [`Week6.md`](weeks/Week6.md) |
+| 7 | Optimization & Performance | Latency + cost reductions | **OpenAI + Azure OpenAI** (Python, **Node.js intro**) | Caching, batching, model selection | [`Week7.md`](weeks/Week7.md) |
+| 8 | Applied Mini Projects | Polished micro-app | **OpenAI + Azure OpenAI** (Python, Go, Node.js) | Multi-language apps | [`Week8.md`](weeks/Week8.md) |
+| 9 | Autonomous / Planning Agents | Planner vs reactive comparison | **OpenAI + Azure OpenAI** (Python, Go, Node.js) | Planning algorithms | [`Week9.md`](weeks/Week9.md) |
+| 10 | Deployment & Scaling | Local + cloud deployment | **OpenAI + Azure OpenAI** (Python, Go, Node.js) | Scaling strategies | [`Week10.md`](weeks/Week10.md) |
+| **Advanced Phase - Add Frontend** |
+| 11 | Capstone Build | Integrated RAG + tools + eval | **OpenAI + Azure OpenAI** (Python, Go, Node.js, **React intro**) | Full-stack application | [`Week11.md`](weeks/Week11.md) |
+| 12 | Review & Deep Dives | Retrospective + experiments | **OpenAI + Azure OpenAI** (All backends + React) | Lessons learned | [`Week12.md`](weeks/Week12.md) |
+| 13 | Advanced RAG | Hybrid search + reranking | **OpenAI + Azure OpenAI** (Python, Go, Node.js, **Angular intro**) | Semantic chunking | [`Week13.md`](weeks/Week13.md) |
+| 14 | Reasoning Patterns Deep Dive | Pattern mastery | **OpenAI + Azure OpenAI** (All backends + React, Angular) | **All patterns (CoT, ReAct, ToT, PoT)** | [`Week14.md`](weeks/Week14.md) |
+| 15 | Multi-Agent Systems | Agent coordination + communication | **OpenAI + Azure OpenAI** (All backends + React, Angular, **Next.js intro**) | Multi-agent architectures | [`Week15.md`](weeks/Week15.md) |
+| **Production Phase - Add .NET** |
+| 16 | Production Optimization | Cost + performance optimization | **OpenAI + Azure OpenAI** (All languages + **.NET Web API intro**) | Production best practices | [`Week16.md`](weeks/Week16.md) |
+| 17 | Advanced Evaluation | Comprehensive evaluation framework | **OpenAI + Azure OpenAI** (All languages + .NET Web API) | Custom metrics | [`Week17.md`](weeks/Week17.md) |
+| 18 | Specialized Applications | Domain-specific applications | **OpenAI + Azure OpenAI** (All languages + **Blazor intro**) | Industry use cases | [`Week18.md`](weeks/Week18.md) |
+| 19 | Research & Experimentation | Research framework | **OpenAI + Azure OpenAI** (All languages + **.NET Aspire intro**) | Experimental design | [`Week19.md`](weeks/Week19.md) |
+| 20 | Mastery & Beyond | Complete mastery + portfolio | **OpenAI + Azure OpenAI** (All platforms) | Advanced portfolio | [`Week20.md`](weeks/Week20.md) |
+| **Mastery Phase - Framework Integration** |
+| 21 | Azure OpenAI Deep Dive | Multi-provider patterns | **OpenAI + Azure OpenAI** (All platforms) | **Azure OpenAI + abstraction** | [`Week21.md`](weeks/Week21.md) |
+| 22 | Multi-Language Mastery | Cross-language patterns | **OpenAI + Azure OpenAI** (Python, Go, Node.js mastery) | **Cross-language patterns** | [`Week22.md`](weeks/Week22.md) |
+| 23 | Frontend Mastery | Frontend LLM integration | **OpenAI + Azure OpenAI** (React, Angular, Next.js mastery) | **Frontend LLM integration** | [`Week23.md`](weeks/Week23.md) |
+| 24 | .NET Mastery | Full-stack .NET | **OpenAI + Azure OpenAI** (Aspire, Web API, Blazor mastery) | **Full-stack .NET** | [`Week24.md`](weeks/Week24.md) |
+| 25 | Agentic Frameworks | Framework mastery | **OpenAI + Azure OpenAI** (LangChain, LangGraph, SDKs) | **Framework mastery** | [`Week25.md`](weeks/Week25.md) |
+
+---
+
+## 📚 Learning Structure
+
+### Weekly Structure
+
+Each week follows this pattern:
+- **5 days** × **30 minutes** = **2.5 hours total**
+- **Day-by-day breakdown** with specific tasks
+- **Exercises** with success criteria
+- **Deliverables** to track progress
+- **Deep dives** for key concepts (Weeks 3, 5, 14, 21-25)
+
+### Key Deep Dives
+
+- **Week 3**: Chain-of-Thought (CoT) - Complete patterns, examples, best practices
+- **Week 5**: ReAct (Reasoning + Acting) - Full implementation guide
+- **Week 14**: Reasoning Patterns - All patterns (CoT, ReAct, ToT, PoT, etc.)
+- **Week 21**: Azure OpenAI - Setup, deployment, multi-provider patterns
+- **Week 22**: Multi-Language - Python, Go, Node.js comparison
+- **Week 23**: Frontend - React, Angular, Next.js integration
+- **Week 24**: .NET - Full-stack .NET applications
+- **Week 25**: Frameworks - LangChain, LangGraph, OpenAI/Azure SDKs
+
+### Multi-Platform Support (From Week 1)
+
+**Progressive Language Introduction:**
+- **Weeks 1-5**: Python with OpenAI + Azure OpenAI
+- **Weeks 6-10**: Add Go and Node.js (backend languages)
+- **Weeks 11-15**: Add React, Angular, Next.js (frontend frameworks)
+- **Weeks 16-20**: Add .NET Web API, Blazor, Aspire (.NET ecosystem)
+- **Weeks 21-25**: Master all platforms + frameworks (LangChain, LangGraph, SDKs)
+
+**Dual Provider Support:**
+- **Every week**: All implementations support both OpenAI and Azure OpenAI
+- **Week 1**: Start with both providers from day one
+- **Throughout**: Compare and contrast both providers
+
+---
+
+## 🏗 Workflow & Best Practices
+
+### Daily Workflow (30 Minutes)
+
+1. **(5m)** Review yesterday's result + decide single micro-goal
+2. **(15-20m)** Implement / refine (one change only)
+3. **(3m)** Run eval script; append to log
+4. **(2m)** Capture decision in `docs/decisions.md`
+5. **(Optional 5m)** Stage next hypothesis
+
+**Consistency > intensity.**
+
+### Project Structure
+
+```
+notebooks/          # Explorations (00_, 01_, ...)
 prompts/            # Reusable prompt templates (+ metadata JSON)
 rag/                # Index builders, retrievers, query pipelines
 agents/             # Agent loops & tool registries
@@ -69,11 +194,21 @@ docs/               # Decision logs, retrospectives, deep dives
 
 Keep structure emergent: create folders only when you add first artifact.
 
----
+### Core Best Practices
 
-## 🧪 Metrics & Experiment Log
+| Area | Guideline |
+|------|-----------|
+| Prompts | Externalize templates + version in Git; keep variables explicit |
+| Data | Preserve raw, transform forward only (no in-place overwrites) |
+| Eval | Always run baseline before claiming improvement |
+| Tool Calling | Define JSON schema first; validate outputs defensively |
+| Agents | Log reasoning / tool selection for post-mortem audits |
+| Cost | Track cumulative token usage weekly; set soft budget ceiling |
+| Reproducibility | Seed randomness (where supported) + pin critical deps |
 
-Track minimal but useful fields (CSV or lightweight SQLite):
+### Experiment Logging
+
+Track minimal but useful fields (CSV):
 
 | Column | Description |
 |--------|-------------|
@@ -88,107 +223,137 @@ Track minimal but useful fields (CSV or lightweight SQLite):
 | score_factuality | Faithfulness / hallucination proxy |
 | notes | Quick observation / anomaly |
 
-Automate population for repeatability; never hand-edit historical rows.
-
 ---
 
-## 🏗 Workflow Pattern (Daily 30 Minutes)
+## 📊 Progress Tracking
 
-1. (5m) Review yesterday’s result + decide single micro‑goal.
-2. (15–20m) Implement / refine (one change only: prompt tweak OR retriever variant—not both).
-3. (3m) Run eval script; append row to log.
-4. (2m) Capture decision or question in `docs/decisions.md`.
-5. (Optional 5m) Stage next hypothesis.
+### Weekly Checklist Template
 
-Consistency > intensity.
+Use this for each week:
+- [ ] Week objectives completed
+- [ ] All exercises finished
+- [ ] Deliverables created
+- [ ] Reflection documented
+- [ ] Ready for next week
 
----
+### Monthly Milestones
 
-## 🔑 Core Best Practices
+- [ ] **Month 1:** Can build basic LLM applications (Python, OpenAI + Azure OpenAI)
+- [ ] **Month 2:** Can build RAG systems (Advanced patterns)
+- [ ] **Month 3:** Can build multi-agent systems (ReAct, planning)
+- [ ] **Month 4:** Can build production-ready applications (Deployment, optimization)
+- [ ] **Month 5:** Can build full-stack LLM applications (Multi-language, frameworks)
+- **Month 6+:** Complete mastery across all platforms
 
-| Area | Guideline |
-|------|-----------|
-| Prompts | Externalize templates + version in Git; keep variables explicit |
-| Data | Preserve raw, transform forward only (no in‑place overwrites) |
-| Eval | Always run baseline before claiming improvement |
-| Tool Calling | Define JSON schema first; validate outputs defensively |
-| Agents | Log reasoning / tool selection for post-mortem audits |
-| Cost | Track cumulative token usage weekly; set soft budget ceiling |
-| Reproducibility | Seed randomness (where supported) + pin critical deps |
+### Weekly Reflection Template
 
----
+```markdown
+## Week [X] Review - [Date]
 
-## 📘 Topic Coverage Snapshot
+### What I Learned
+- 
 
-- Foundations: env, APIs, Git hygiene
-- Prompt engineering & structured output design
-- Retrieval (chunking, embeddings, hybrid search, reranking)
-- Agents & tool orchestration
-- Evaluation (relevance, faithfulness, latency, cost)
-- Optimization (caching, batching, model selection)
-- Deployment & lightweight productization
+### What I Built
+- 
 
----
+### Challenges Faced
+- 
 
-## 🧪 Capstone Suggestions (Pick One)
+### Solutions Found
+- 
 
-| Idea | Core Components | Stretch Add-ons |
-|------|-----------------|-----------------|
-| Domain Q&A Assistant | RAG + prompt eval loop | Tool calling (search / calculator) |
-| Multi-Source Summarizer | Scraper + batching + summarization | Timeline / topic clustering |
-| Agentic Research Helper | Planner agent + retriever tools | Memory & critique loop |
-| Structured Data Extractor | Prompted JSON + validation | Active learning correction pass |
+### Next Week Goals
+- 
 
----
-
-## ✅ Personal Setup Checklist
-
-- [ ] Virtual environment created and activated
-- [ ] API keys loaded via `.env` (never committed)
-- [ ] `notebooks/00_diagnostics.ipynb` runs successfully
-- [ ] `eval/experiment_log.csv` created
-- [ ] First prompt template stored in `prompts/`
-- [ ] Baseline run logged (token + latency metrics)
-
-Revisit weekly; add/remove items as maturity grows.
-
----
-
-## 🧭 Adapting for Different Goals
-
-| Goal | Focus | Drop / Minimize |
-|------|-------|-----------------|
-| Rapid prototyping | Prompts, tool calling | Heavy evaluation, optimization early |
-| Research depth | Retrieval variants, eval rigor | Deployment polish |
-| Portfolio | 2 polished micro‑apps | Lower-value exploratory dead ends |
-| Cost sensitivity | Model selection, caching | Large multi-model sweeps |
-
----
-
-## 🔁 Retrospective Template (Weekly)
-
-```text
-Week: 03
-Objective: Improve baseline retrieval relevance
-What worked: Hybrid search + rerank improved relevance +12%
-What didn’t: Over-aggressive chunk overlap increased cost
-Change for next week: Introduce caching layer for embeddings
-Risk / concern: Prompt drift; need hashing utility
+### Time Spent
+- Total: ___ hours
 ```
 
-Store retros in `docs/retros/` (one file per week) for longitudinal insight.
+---
+
+## 🆘 Troubleshooting
+
+### Common Issues
+
+**"ModuleNotFoundError: No module named 'openai'"**
+- Solution: Activate virtual environment and run `pip install openai`
+
+**"API key not found"**
+- Solution: Check `.env` file exists, contains `OPENAI_API_KEY=...` (no spaces), and use `load_dotenv()`
+
+**"Rate limit exceeded"**
+- Solution: Add delays between calls: `time.sleep(1)`, or use different tier
+
+**"Context length exceeded"**
+- Solution: Split text into smaller chunks, or use model with larger context window
+
+**"Invalid API key"**
+- Solution: Verify key is correct, no extra spaces in `.env`, key is active
 
 ---
 
-## 🏁 How to Use This Document
+## 📚 Resources
 
-- Bootstrap: Follow Quick Start + Checklist.
-- Guide pacing: Use Week plan table; adjust via Adaptation matrix.
-- Improve deliberately: Log everything; compare against baselines.
-- Reflect: Run weekly retrospective loop.
+### Essential Reading
+- [OpenAI API Documentation](https://platform.openai.com/docs)
+- [Azure OpenAI Documentation](https://learn.microsoft.com/azure/ai-services/openai/)
+- [LangChain Documentation](https://python.langchain.com/)
+- [Prompt Engineering Guide](https://www.promptingguide.ai/)
+
+### Video Resources
+- **Ed Donner's Udemy Course** (your primary resource)
+- [Andrej Karpathy's LLM Course](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ) - Deep dive
+
+### Communities
+- [r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/) - Reddit community
+- [LangChain Discord](https://discord.gg/langchain) - Active community
+- [Hugging Face Forums](https://discuss.huggingface.co/) - Model discussions
+
+### Tools & Libraries
+- **LangChain** - Framework for LLM applications
+- **LangGraph** - Stateful agent workflows
+- **LlamaIndex** - RAG framework
+- **Gradio** - Easy UI for demos
+- **Streamlit** - Alternative UI framework
 
 ---
+
+## 🎓 Learning Tips
+
+1. **Code Along:** Don't just watch - code along with the course
+2. **Build Projects:** Apply concepts immediately to real projects
+3. **Experiment:** Try variations of what you learn
+4. **Document:** Write down what you learn and why
+5. **Practice Daily:** Even 30 minutes daily beats 5 hours once a week
+6. **Use Both Providers:** Practice with OpenAI and Azure OpenAI
+7. **Explore Languages:** Try implementations in different languages (Weeks 22-24)
+
+---
+
+## 🏁 How to Use This Plan
+
+1. **Start:** Read this document, then open [`Week1.md`](weeks/Week1.md)
+2. **Progress:** Follow weekly guides day-by-day (5 days × 30 minutes)
+3. **Track:** Use weekly checklists and reflection templates
+4. **Adapt:** Adjust pacing based on your schedule (see adaptation notes in weekly guides)
+5. **Reflect:** Complete weekly retrospectives to consolidate learning
+
+---
+
+## 📖 Detailed Weekly Guides
+
+All 25 weeks have comprehensive day-by-day guides with:
+- Learning objectives
+- Daily task breakdowns
+- Practical exercises
+- Code examples (Python, Go, Node.js, Angular, React, Next.js, .NET)
+- Deep dive sections for key concepts
+- Deliverables and success criteria
+
+**Start with:** [`docs/weeks/Week1.md`](weeks/Week1.md)
+
+---
+
+**Remember:** Learning LLM Engineering is a journey. Start with basics, build consistently, and don't be afraid to experiment. Every expert was once a beginner!
 
 Evolve ruthlessly—delete stale experiments, promote reusable patterns, and keep learning velocity high.
-
-<!-- END ORIGINAL CONTENT -->

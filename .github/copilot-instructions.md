@@ -8,6 +8,24 @@ Guidance for AI pair programming in this repository. These conventions help prod
 
 LLM engineering experimentation: prompt design, RAG, agents, tool/function calling, evaluation harnesses, lightweight deployment.
 
+**Multi-Provider Support**: All implementations support both OpenAI and Azure OpenAI.
+
+**Multi-Language Support**: Code examples provided in Python, Go, Node.js, Angular, React, Next.js, .NET Aspire, .NET Web API, and .NET Blazor where applicable.
+
+**Learning Path**: This repository follows a structured 25-week learning plan. See `docs/learning-plan.md` for the master document and `docs/weeks/Week1.md` through `docs/weeks/Week25.md` for detailed weekly guides.
+
+**Quality Assurance**: When generating content, verify compliance with `.github/prompts/task-prompt.md` verification framework.
+
+**Key Deep Dives**:
+- **Week 3**: Chain-of-Thought (CoT) - Complete guide with patterns, examples, and best practices
+- **Week 5**: ReAct (Reasoning + Acting) - Full implementation guide with tool integration
+- **Week 14**: Reasoning Patterns Deep Dive - All patterns (CoT, ReAct, ToT, PoT, etc.)
+- **Week 21**: Azure OpenAI Deep Dive - Multi-provider patterns
+- **Week 22**: Multi-Language Implementation - Python, Go, Node.js
+- **Week 23**: Frontend Integration - React, Angular, Next.js
+- **Week 24**: .NET Ecosystem - Aspire, Web API, Blazor
+- **Week 25**: Agentic Frameworks - LangChain, LangGraph, SDKs
+
 ---
 
 ## ✅ General Principles
@@ -85,7 +103,16 @@ When requesting structured output, show an explicit JSON schema in the prompt an
 
 ## 📦 Dependencies
 
-- Prefer widely-used libs: `langchain`, `chromadb`, `sentence-transformers`, `openai`, `anthropic`.
+**Python**: Prefer widely-used libs: `langchain`, `langchain-openai`, `langchain-azure-openai`, `chromadb`, `sentence-transformers`, `openai`, `anthropic`.
+
+**Node.js**: `openai`, `@azure/openai`, `langchain`, `langchain-openai`.
+
+**Go**: `github.com/sashabaranov/go-openai`, `github.com/azure/openai-assistant-go`.
+
+**.NET**: `Azure.AI.OpenAI`, `OpenAI`, `LangChain.Net`.
+
+**Frontend**: Framework-specific LLM libraries (React: `openai`, Angular: HTTP client, Next.js: API routes).
+
 - Avoid adding a dependency if native stdlib or an existing installed lib suffices.
 - Pin unusual or breakage-prone versions; otherwise allow minor updates.
 
