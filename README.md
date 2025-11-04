@@ -1,34 +1,57 @@
 # LLM Engineering Mastery Journey
 
-Personal, hands-on exploration of modern Large Language Model (LLM) engineering, tooling, and real-world application patterns. This repo is a living notebook of experiments, mini-projects, and distilled learnings.
+**Complete 25-week structured learning path for mastering LLM Engineering from basics to multi-platform mastery**
+
+This repository is a comprehensive, hands-on exploration of modern Large Language Model (LLM) engineering, tooling, and real-world application patterns. It accompanies **Ed Donner's "LLM Engineering: Master AI, Large Language Models & Agents"** Udemy course and provides a structured roadmap to build practical skills across multiple platforms and languages.
 
 ---
 
 ## 🎯 Objectives
 
-* Build intuition around LLM architecture, capabilities, and limits
-* Practice retrieval, fine‑tuning, function calling, and agent patterns
-* Compare frameworks (LangChain, LlamaIndex, semantic kernels, etc.) pragmatically
+* Master LLM engineering from foundations to advanced multi-platform applications
+* Build practical skills with **OpenAI** and **Azure OpenAI** (dual provider support from Week 1)
+* Implement LLM applications across **multiple languages**: Python, Go, Node.js, Angular, React, Next.js, .NET
+* Master advanced patterns: Chain-of-Thought (CoT), ReAct, Reasoning Patterns, RAG, Agents
+* Practice retrieval, fine-tuning, function calling, and agent patterns
+* Compare frameworks (LangChain, LangGraph, OpenAI Agent SDK, Azure Agent SDK) pragmatically
 * Establish reproducible, evaluable experiment workflows
-* Develop small end‑to‑end AI features / micro‑apps
+* Develop production-ready, full-stack LLM applications
 
-## 📦 Scope & Themes (Planned)
+## 📦 Learning Path Overview
 
-| Theme | Focus Areas | Sample Artifacts |
-|-------|-------------|------------------|
-| Foundations | Tokenization, prompting, context windows | Prompt variants, token cost notes |
-| Retrieval Augmented Generation (RAG) | Chunking, embeddings, vector DBs, hybrid search | Evaluated retrievers, latency benchmarks |
-| Evaluation | Hallucination detection, factual scoring, A/B harness | Eval scripts, metric dashboards |
-| Tool & Function Calling | JSON mode, schema design, safety | Tool router prototypes |
-| Agents | Planning vs reactive, memory stores | Simple multi-tool agent |
-| Fine‑Tuning / Adapters | LoRA, prompt-tuning vs full FT tradeoffs | Cost comparison sheets |
-| Optimization | Caching, batching, streaming, distillation | Throughput experiments |
+**25-Week Structured Journey:**
+- **Weeks 1-5**: Foundations (Python, OpenAI + Azure OpenAI)
+- **Weeks 6-10**: Intermediate (Add Go, Node.js)
+- **Weeks 11-15**: Advanced (Add React, Angular, Next.js)
+- **Weeks 16-20**: Production (Add .NET Web API, Blazor, Aspire)
+- **Weeks 21-25**: Mastery (All platforms + frameworks)
 
-> NOTE: Not all folders exist yet—will materialize as progress continues.
+**Key Deep Dives:**
+- **Week 3**: Chain-of-Thought (CoT) - Complete patterns and best practices
+- **Week 5**: ReAct (Reasoning + Acting) - Full implementation guide
+- **Week 14**: Reasoning Patterns - All patterns (CoT, ReAct, ToT, PoT, etc.)
+- **Week 21**: Azure OpenAI Deep Dive - Multi-provider patterns
+- **Week 22**: Multi-Language Mastery - Python, Go, Node.js
+- **Week 23**: Frontend Mastery - React, Angular, Next.js
+- **Week 24**: .NET Mastery - Aspire, Web API, Blazor
+- **Week 25**: Agentic Frameworks - LangChain, LangGraph, SDKs
+
+**Multi-Platform Support:**
+- **Providers**: OpenAI + Azure OpenAI (dual support from Week 1)
+- **Languages**: Python, Go, Node.js, Angular, React, Next.js, .NET Aspire, .NET Web API, .NET Blazor
+- **Frameworks**: LangChain, LangGraph, OpenAI Agent SDK, Azure Agent SDK
+
+> **Note**: Detailed weekly guides are in [`docs/weeks/`](docs/weeks/) - each week contains day-by-day breakdowns, exercises, and deliverables.
 
 ## 🧪 Current Status
 
-Early setup & curriculum alignment phase. Experiment scaffolding and evaluation harness design in progress.
+✅ **25-Week Learning Plan Complete** - All weekly guides structured and ready  
+✅ **Multi-Platform Support** - OpenAI + Azure OpenAI from Week 1  
+✅ **Multi-Language Support** - Progressive introduction across 9 platforms  
+✅ **Deep Dives** - 8 dedicated deep dive weeks (CoT, ReAct, Reasoning, Platforms, Frameworks)  
+🚧 **In Progress** - Code implementation as you learn (planning structure complete)
+
+**Ready to Start**: Begin with [`docs/learning-plan.md`](docs/learning-plan.md) and [`docs/weeks/Week1.md`](docs/weeks/Week1.md)
 
 ## References
 
@@ -50,6 +73,11 @@ cd llm-engineering-learning
 # Sync environment and install dependencies
 uv sync
 
+# Set up API keys (create .env file)
+# OpenAI: https://platform.openai.com/api-keys
+# Azure OpenAI: https://portal.azure.com → Create Azure OpenAI resource
+# Copy .env.example to .env and fill in your keys
+
 # (Optional) Run diagnostics to verify setup
 cd notebooks/01-setup && uv run python diagnostics.py
 
@@ -58,6 +86,8 @@ uv run python -m eval.log_utils
 uv run python -m eval.metrics
 ```
 
+**Start Learning**: Open [`docs/learning-plan.md`](docs/learning-plan.md) for the master guide, then begin with [`docs/weeks/Week1.md`](docs/weeks/Week1.md)
+
 ## 📚 Primary Course Reference
 
 Studying: "LLM Engineering: Master AI, Large Language Models & Agents" by Ed Donner on Udemy.
@@ -65,16 +95,44 @@ Course link: <https://www.udemy.com/course/llm-engineering-master-ai-and-large-l
 
 Supplemented with official docs, open papers, and community benchmarks.
 
-## 🗺 Roadmap (Incremental Milestones)
+## 🗺 25-Week Learning Roadmap
 
-1. Environment & repo scaffolding (structure, dependency mgmt, basic eval harness)
-2. Prompt engineering baseline & systematic variant logging
-3. RAG baseline (single vector store) → hybrid search → reranking
-4. Lightweight evaluation suite (faithfulness, answer relevance, latency)
-5. Tool/function calling prototypes (deterministic schemas, error handling)
-6. Simple agent w/ tool selection rationale logging
-7. Cost & performance optimization (caching, batching, model selection matrix)
-8. (Stretch) Fine‑tune / adapter experiment & comparison vs prompt engineering
+### Foundation Phase (Weeks 1-5)
+1. **Week 1**: Environment setup, API keys, dual provider (OpenAI + Azure OpenAI)
+2. **Week 2**: Python & data handling, text chunking
+3. **Week 3**: Prompt engineering + **Chain-of-Thought (CoT) Deep Dive**
+4. **Week 4**: Web scraping & LLM integration
+5. **Week 5**: Multi-agent intro + **ReAct (Reasoning + Acting) Deep Dive**
+
+### Intermediate Phase (Weeks 6-10)
+6. **Week 6**: Structured outputs, function calling + **Go intro**
+7. **Week 7**: Optimization & performance + **Node.js intro**
+8. **Week 8**: Applied mini projects (multi-language)
+9. **Week 9**: Autonomous/planning agents
+10. **Week 10**: Deployment & scaling
+
+### Advanced Phase (Weeks 11-15)
+11. **Week 11**: Capstone build + **React intro**
+12. **Week 12**: Review & deep dives
+13. **Week 13**: Advanced RAG techniques + **Angular intro**
+14. **Week 14**: **Reasoning Patterns Deep Dive** (all patterns)
+15. **Week 15**: Multi-agent systems + **Next.js intro**
+
+### Production Phase (Weeks 16-20)
+16. **Week 16**: Production optimization + **.NET Web API intro**
+17. **Week 17**: Advanced evaluation
+18. **Week 18**: Specialized applications + **Blazor intro**
+19. **Week 19**: Research & experimentation + **.NET Aspire intro**
+20. **Week 20**: Mastery & beyond (all platforms)
+
+### Mastery Phase (Weeks 21-25)
+21. **Week 21**: **Azure OpenAI Deep Dive** + multi-provider patterns
+22. **Week 22**: **Multi-Language Mastery** (Python, Go, Node.js)
+23. **Week 23**: **Frontend Mastery** (React, Angular, Next.js)
+24. **Week 24**: **.NET Mastery** (Aspire, Web API, Blazor)
+25. **Week 25**: **Agentic Frameworks Mastery** (LangChain, LangGraph, SDKs)
+
+**See** [`docs/learning-plan.md`](docs/learning-plan.md) **for the complete master guide with all 25 weeks detailed.**
 
 ## 🧱 Repository Structure
 
@@ -87,7 +145,9 @@ Supplemented with official docs, open papers, and community benchmarks.
 ├─ docs/               # Documentation, guides, and decision logs
 │  ├─ images/          # Documentation images
 │  ├─ reports/         # Generated reports and diagnostics
-│  └─ retros/          # Retrospective notes and learnings
+│  ├─ retros/          # Retrospective notes and learnings
+│  ├─ weeks/           # 25 weekly learning guides (Week1.md - Week25.md)
+│  └─ learning-plan.md # Master 25-week learning plan
 ├─ eval/               # Evaluation scripts, metrics, and experiment logging
 ├─ notebooks/          # Exploratory Jupyter notebooks & analysis
 │  └─ 01-setup/        # Setup diagnostics and troubleshooting
@@ -204,9 +264,20 @@ uv remove package-name
 * Papers: RAG triad (retrieval quality, generation control, evaluation), Toolformer, Self-Ask
 * Evaluation frameworks: RAGAS, TruLens, LM Evaluation Harness
 
-## 📎 Extended Learning Plan
+## 📚 Comprehensive Learning Plan
 
-For a detailed 12‑week study blueprint, daily workflow pattern, metrics schema, and capstone ideas see: [`docs/learning-plan.md`](docs/learning-plan.md)
+For the complete **25-week structured learning path**, daily workflow patterns, metrics schema, multi-platform support, and detailed weekly guides, see:
+
+- **[`docs/learning-plan.md`](docs/learning-plan.md)** - Master learning plan with overview, quick start, prerequisites, and 25-week table
+- **[`docs/weeks/Week1.md`](docs/weeks/Week1.md) through [`docs/weeks/Week25.md`](docs/weeks/Week25.md)** - Detailed day-by-day guides for each week
+
+**Each week includes:**
+- Learning objectives
+- 5 days × 30 minutes breakdown (2.5 hours/week)
+- Practical exercises with success criteria
+- Code examples (planned - add as you learn)
+- Deep dive sections for key concepts
+- Deliverables and reflection templates
 
 ## 🔐 Ethics & Safety Notes (Intent)
 
