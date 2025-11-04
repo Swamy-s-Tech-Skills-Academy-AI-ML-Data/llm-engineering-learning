@@ -14,10 +14,17 @@ LLM engineering experimentation: prompt design, RAG, agents, tool/function calli
 
 **Learning Path**: This repository follows a structured 25-week learning plan. See `docs/learning-plan.md` for the master document and `docs/weeks/Week1.md` through `docs/weeks/Week25.md` for detailed weekly guides.
 
+**Quality Assurance**: When generating content, verify compliance with `.github/prompts/task-prompt.md` verification framework.
+
 **Key Deep Dives**:
 - **Week 3**: Chain-of-Thought (CoT) - Complete guide with patterns, examples, and best practices
 - **Week 5**: ReAct (Reasoning + Acting) - Full implementation guide with tool integration
 - **Week 14**: Reasoning Patterns Deep Dive - All patterns (CoT, ReAct, ToT, PoT, etc.)
+- **Week 21**: Azure OpenAI Deep Dive - Multi-provider patterns
+- **Week 22**: Multi-Language Implementation - Python, Go, Node.js
+- **Week 23**: Frontend Integration - React, Angular, Next.js
+- **Week 24**: .NET Ecosystem - Aspire, Web API, Blazor
+- **Week 25**: Agentic Frameworks - LangChain, LangGraph, SDKs
 
 ---
 

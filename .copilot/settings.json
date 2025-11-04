@@ -12,9 +12,13 @@
         "general": [
             "Follow repository conventions: small modules, explicit config, reproducible experiments.",
             "Never hardcode secrets; assume .env loading.",
-            "Log experiment metadata (run_id, model, prompt_hash, tokens, latency)."
+            "Log experiment metadata (run_id, model, prompt_hash, tokens, latency).",
+            "When creating weekly guides or documentation, ensure alignment with 25-week learning path structure.",
+            "Verify content follows learning path verification standards from .github/prompts/task-prompt.md.",
+            "Support both OpenAI and Azure OpenAI implementations in all code examples.",
+            "Include multi-language examples (Python, Go, Node.js, Angular, React, Next.js, .NET) when relevant."
         ],
-        "addedFileHeader": "# Auto-generated with guidance from .github/copilot-instructions.md\n# Review for correctness and adapt before production use."
+        "addedFileHeader": "# Auto-generated with guidance from .github/copilot-instructions.md\n# Content verified against .github/prompts/task-prompt.md standards\n# Review for correctness and adapt before production use."
     },
     "filters": {
         "disallow": [
