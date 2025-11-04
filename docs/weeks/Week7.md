@@ -2,7 +2,8 @@
 
 **Theme:** Optimization & Performance  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** Latency + token cost reductions + Before/after metrics
+**Primary Outcome:** Latency + token cost reductions + Before/after metrics  
+**Platforms:** OpenAI + Azure OpenAI (Python, Go, **Node.js intro**)
 
 ---
 
@@ -14,6 +15,7 @@ By the end of this week, you will:
 - [ ] Implement caching strategies
 - [ ] Select appropriate models
 - [ ] Measure and track performance
+- [ ] **Introduction to Node.js**: Implement optimization in Node.js
 
 ---
 
@@ -166,7 +168,42 @@ By the end of this week, you will:
 
 ---
 
-### Day 5: Review & Practice (30 minutes)
+### Day 5: Node.js Introduction - Optimization (30 minutes)
+
+**Learning Goal:** Implement optimization techniques in Node.js (optional, for multi-platform learning)
+
+**Tasks (30 min):**
+
+1. **Node.js Setup** (5 min)
+   ```bash
+   # Install Node.js if needed: https://nodejs.org/
+   node --version  # Verify Node.js 18+
+   
+   # Create Node.js project
+   mkdir llm-nodejs && cd llm-nodejs
+   npm init -y
+   npm install openai dotenv
+   ```
+
+2. **Node.js Implementation** (25 min)
+   - Async/await patterns for latency optimization
+   - Caching implementation
+   - Performance tracking
+   - Both OpenAI and Azure OpenAI support
+
+**Exercise:**
+- [ ] Set up Node.js environment
+- [ ] Implement optimization in Node.js
+- [ ] Test with both providers
+- [ ] Compare Node.js vs Python implementations
+
+**Note:** This is optional for Week 7. Focus on Python first, then try Node.js if time permits.
+
+---
+
+### Day 5 Alternative: Review & Practice (30 minutes)
+
+**If focusing on Python only:**
 
 **Tasks:**
 - Review optimizations
@@ -177,6 +214,7 @@ By the end of this week, you will:
 - [ ] Optimized system
 - [ ] Performance metrics
 - [ ] Before/after comparison
+- [ ] (Optional) Node.js implementation
 
 ---
 
@@ -184,6 +222,6 @@ By the end of this week, you will:
 
 **Week 8:** Applied Mini Projects
 - Build polished micro-applications
+- Multi-language support (Python, Go, Node.js)
 - Gradio or CLI interfaces
-- Complete project from scratch
 

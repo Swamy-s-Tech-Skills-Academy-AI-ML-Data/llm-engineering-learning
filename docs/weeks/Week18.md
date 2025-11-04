@@ -2,7 +2,8 @@
 
 **Theme:** Specialized Applications  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** Domain-specific LLM applications + Custom use cases
+**Primary Outcome:** Domain-specific LLM applications + Custom use cases  
+**Platforms:** OpenAI + Azure OpenAI (All languages + **Blazor intro**)
 
 ---
 
@@ -14,6 +15,7 @@ By the end of this week, you will:
 - [ ] Create custom solutions
 - [ ] Understand industry applications
 - [ ] Apply specialized patterns
+- [ ] **Introduction to Blazor**: Optional Blazor frontend (if time permits)
 
 ---
 

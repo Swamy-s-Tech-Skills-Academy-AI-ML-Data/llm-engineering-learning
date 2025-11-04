@@ -2,7 +2,8 @@
 
 **Theme:** Multi-Agent Systems  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** Working multi-agent system + Coordination patterns
+**Primary Outcome:** Working multi-agent system + Coordination patterns  
+**Platforms:** OpenAI + Azure OpenAI (Python, Go, Node.js, React, Angular, **Next.js intro**)
 
 ---
 
@@ -14,6 +15,7 @@ By the end of this week, you will:
 - [ ] Handle agent communication
 - [ ] Build complex multi-agent applications
 - [ ] Evaluate multi-agent performance
+- [ ] **Introduction to Next.js**: Optional Next.js integration (if time permits)
 
 ---
 

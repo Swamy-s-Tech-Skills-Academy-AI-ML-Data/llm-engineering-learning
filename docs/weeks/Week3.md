@@ -2,7 +2,8 @@
 
 **Theme:** LLM & Prompt Engineering + Chain-of-Thought (CoT)  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** Prompt patterns + evaluation harness + CoT mastery
+**Primary Outcome:** Prompt patterns + evaluation harness + CoT mastery  
+**Platforms:** OpenAI + Azure OpenAI (Python) - Dual provider support from Week 1
 
 ---
 
@@ -15,6 +16,7 @@ By the end of this week, you will:
 - [ ] Create prompt templates and patterns
 - [ ] Build evaluation frameworks for prompts
 - [ ] Apply CoT to complex reasoning tasks
+- [ ] Test CoT prompts with both OpenAI and Azure OpenAI
 
 ---
 

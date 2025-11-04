@@ -85,40 +85,45 @@ Before starting, can you:
 **Structure:** 5 days × 30 minutes = 2.5 hours per week  
 **Total Time:** ~62.5 hours  
 **Multi-Platform from Week 1:** OpenAI + Azure OpenAI + Python + Go + Node.js + Frontend + .NET  
-**Progressive Language Introduction:** Python (Weeks 1-5) → Add Go/Node.js (Weeks 6-10) → Add Frontend (Weeks 11-15) → Add .NET (Weeks 16-20) → Master All (Weeks 21-25)
+**Progressive Multi-Platform Introduction:**
+- **Weeks 1-5**: Python with OpenAI + Azure OpenAI (dual provider from start)
+- **Weeks 6-10**: Add Go and Node.js (backend languages)
+- **Weeks 11-15**: Add React, Angular, Next.js (frontend frameworks)
+- **Weeks 16-20**: Add .NET Web API, Blazor, Aspire (.NET ecosystem)
+- **Weeks 21-25**: Master all platforms + frameworks (LangChain, LangGraph, SDKs)
 
-| Week | Theme | Primary Outcomes | Deep Dives | Guide |
-|------|-------|------------------|------------|-------|
-| **Foundation Phase** |
-| 1 | Foundations & Environment | Reproducible env, API key management | OpenAI + Azure OpenAI setup | [`Week1.md`](weeks/Week1.md) |
-| 2 | Python & Data Handling | Clean data ingestion + utilities | Text chunking strategies | [`Week2.md`](weeks/Week2.md) |
-| 3 | LLM & Prompt Engineering | Prompt patterns + evaluation | **Chain-of-Thought (CoT)** | [`Week3.md`](weeks/Week3.md) |
-| 4 | Bots & Scraping | Basic scraper + LLM summarizer | Web scraping + integration | [`Week4.md`](weeks/Week4.md) |
-| 5 | Multi-Agent Intro + ReAct | Agent reasoning log | **ReAct (Reasoning + Acting)** | [`Week5.md`](weeks/Week5.md) |
-| **Intermediate Phase** |
-| 6 | Structured Outputs & Orchestration | Reliable JSON / tool calling | Function calling APIs | [`Week6.md`](weeks/Week6.md) |
-| 7 | Optimization & Performance | Latency + cost reductions | Caching, batching, model selection | [`Week7.md`](weeks/Week7.md) |
-| 8 | Applied Mini Projects | Polished micro-app | Gradio or CLI app | [`Week8.md`](weeks/Week8.md) |
-| 9 | Autonomous / Planning Agents | Planner vs reactive comparison | Planning algorithms | [`Week9.md`](weeks/Week9.md) |
-| 10 | Deployment & Scaling | Local + cloud deployment | Scaling strategies | [`Week10.md`](weeks/Week10.md) |
-| **Advanced Phase** |
-| 11 | Capstone Build | Integrated RAG + tools + eval | Full-stack application | [`Week11.md`](weeks/Week11.md) |
-| 12 | Review & Deep Dives | Retrospective + experiments | Lessons learned | [`Week12.md`](weeks/Week12.md) |
-| 13 | Advanced RAG | Hybrid search + reranking | Semantic chunking | [`Week13.md`](weeks/Week13.md) |
-| 14 | Reasoning Patterns Deep Dive | Pattern mastery | **All patterns (CoT, ReAct, ToT, PoT)** | [`Week14.md`](weeks/Week14.md) |
-| 15 | Multi-Agent Systems | Agent coordination + communication | Multi-agent architectures | [`Week15.md`](weeks/Week15.md) |
-| **Production Phase** |
-| 16 | Production Optimization | Cost + performance optimization | Production best practices | [`Week16.md`](weeks/Week16.md) |
-| 17 | Advanced Evaluation | Comprehensive evaluation framework | Custom metrics | [`Week17.md`](weeks/Week17.md) |
-| 18 | Specialized Applications | Domain-specific applications | Industry use cases | [`Week18.md`](weeks/Week18.md) |
-| 19 | Research & Experimentation | Research framework | Experimental design | [`Week19.md`](weeks/Week19.md) |
-| 20 | Mastery & Beyond | Complete mastery + portfolio | Advanced portfolio | [`Week20.md`](weeks/Week20.md) |
-| **Multi-Platform Mastery Phase** |
-| 21 | Azure OpenAI Deep Dive | Multi-provider patterns | **Azure OpenAI + abstraction** | [`Week21.md`](weeks/Week21.md) |
-| 22 | Multi-Language Implementation | Python, Go, Node.js apps | **Cross-language patterns** | [`Week22.md`](weeks/Week22.md) |
-| 23 | Frontend Integration | React, Angular, Next.js apps | **Frontend LLM integration** | [`Week23.md`](weeks/Week23.md) |
-| 24 | .NET Ecosystem | Aspire, Web API, Blazor apps | **Full-stack .NET** | [`Week24.md`](weeks/Week24.md) |
-| 25 | Agentic Frameworks | LangChain, LangGraph, SDKs | **Framework mastery** | [`Week25.md`](weeks/Week25.md) |
+| Week | Theme | Primary Outcomes | Platforms | Deep Dives | Guide |
+|------|-------|------------------|-----------|------------|-------|
+| **Foundation Phase - Multi-Platform from Start** |
+| 1 | Foundations & Environment | Reproducible env, API key management | **OpenAI + Azure OpenAI** (Python) | Dual provider setup | [`Week1.md`](weeks/Week1.md) |
+| 2 | Python & Data Handling | Clean data ingestion + utilities | **OpenAI + Azure OpenAI** (Python) | Text chunking strategies | [`Week2.md`](weeks/Week2.md) |
+| 3 | LLM & Prompt Engineering | Prompt patterns + evaluation | **OpenAI + Azure OpenAI** (Python) | **Chain-of-Thought (CoT)** | [`Week3.md`](weeks/Week3.md) |
+| 4 | Bots & Scraping | Basic scraper + LLM summarizer | **OpenAI + Azure OpenAI** (Python) | Web scraping + integration | [`Week4.md`](weeks/Week4.md) |
+| 5 | Multi-Agent Intro + ReAct | Agent reasoning log | **OpenAI + Azure OpenAI** (Python) | **ReAct (Reasoning + Acting)** | [`Week5.md`](weeks/Week5.md) |
+| **Intermediate Phase - Add Backend Languages** |
+| 6 | Structured Outputs & Orchestration | Reliable JSON / tool calling | **OpenAI + Azure OpenAI** (Python, **Go intro**) | Function calling APIs | [`Week6.md`](weeks/Week6.md) |
+| 7 | Optimization & Performance | Latency + cost reductions | **OpenAI + Azure OpenAI** (Python, **Node.js intro**) | Caching, batching, model selection | [`Week7.md`](weeks/Week7.md) |
+| 8 | Applied Mini Projects | Polished micro-app | **OpenAI + Azure OpenAI** (Python, Go, Node.js) | Multi-language apps | [`Week8.md`](weeks/Week8.md) |
+| 9 | Autonomous / Planning Agents | Planner vs reactive comparison | **OpenAI + Azure OpenAI** (Python, Go, Node.js) | Planning algorithms | [`Week9.md`](weeks/Week9.md) |
+| 10 | Deployment & Scaling | Local + cloud deployment | **OpenAI + Azure OpenAI** (Python, Go, Node.js) | Scaling strategies | [`Week10.md`](weeks/Week10.md) |
+| **Advanced Phase - Add Frontend** |
+| 11 | Capstone Build | Integrated RAG + tools + eval | **OpenAI + Azure OpenAI** (Python, Go, Node.js, **React intro**) | Full-stack application | [`Week11.md`](weeks/Week11.md) |
+| 12 | Review & Deep Dives | Retrospective + experiments | **OpenAI + Azure OpenAI** (All backends + React) | Lessons learned | [`Week12.md`](weeks/Week12.md) |
+| 13 | Advanced RAG | Hybrid search + reranking | **OpenAI + Azure OpenAI** (Python, Go, Node.js, **Angular intro**) | Semantic chunking | [`Week13.md`](weeks/Week13.md) |
+| 14 | Reasoning Patterns Deep Dive | Pattern mastery | **OpenAI + Azure OpenAI** (All backends + React, Angular) | **All patterns (CoT, ReAct, ToT, PoT)** | [`Week14.md`](weeks/Week14.md) |
+| 15 | Multi-Agent Systems | Agent coordination + communication | **OpenAI + Azure OpenAI** (All backends + React, Angular, **Next.js intro**) | Multi-agent architectures | [`Week15.md`](weeks/Week15.md) |
+| **Production Phase - Add .NET** |
+| 16 | Production Optimization | Cost + performance optimization | **OpenAI + Azure OpenAI** (All languages + **.NET Web API intro**) | Production best practices | [`Week16.md`](weeks/Week16.md) |
+| 17 | Advanced Evaluation | Comprehensive evaluation framework | **OpenAI + Azure OpenAI** (All languages + .NET Web API) | Custom metrics | [`Week17.md`](weeks/Week17.md) |
+| 18 | Specialized Applications | Domain-specific applications | **OpenAI + Azure OpenAI** (All languages + **Blazor intro**) | Industry use cases | [`Week18.md`](weeks/Week18.md) |
+| 19 | Research & Experimentation | Research framework | **OpenAI + Azure OpenAI** (All languages + **.NET Aspire intro**) | Experimental design | [`Week19.md`](weeks/Week19.md) |
+| 20 | Mastery & Beyond | Complete mastery + portfolio | **OpenAI + Azure OpenAI** (All platforms) | Advanced portfolio | [`Week20.md`](weeks/Week20.md) |
+| **Mastery Phase - Framework Integration** |
+| 21 | Azure OpenAI Deep Dive | Multi-provider patterns | **OpenAI + Azure OpenAI** (All platforms) | **Azure OpenAI + abstraction** | [`Week21.md`](weeks/Week21.md) |
+| 22 | Multi-Language Mastery | Cross-language patterns | **OpenAI + Azure OpenAI** (Python, Go, Node.js mastery) | **Cross-language patterns** | [`Week22.md`](weeks/Week22.md) |
+| 23 | Frontend Mastery | Frontend LLM integration | **OpenAI + Azure OpenAI** (React, Angular, Next.js mastery) | **Frontend LLM integration** | [`Week23.md`](weeks/Week23.md) |
+| 24 | .NET Mastery | Full-stack .NET | **OpenAI + Azure OpenAI** (Aspire, Web API, Blazor mastery) | **Full-stack .NET** | [`Week24.md`](weeks/Week24.md) |
+| 25 | Agentic Frameworks | Framework mastery | **OpenAI + Azure OpenAI** (LangChain, LangGraph, SDKs) | **Framework mastery** | [`Week25.md`](weeks/Week25.md) |
 
 ---
 
@@ -144,11 +149,19 @@ Each week follows this pattern:
 - **Week 24**: .NET - Full-stack .NET applications
 - **Week 25**: Frameworks - LangChain, LangGraph, OpenAI/Azure SDKs
 
-### Multi-Provider & Multi-Language Support
+### Multi-Platform Support (From Week 1)
 
-- **All weeks**: OpenAI + Azure OpenAI implementations
-- **Weeks 22-24**: Multiple languages (Python, Go, Node.js, Angular, React, Next.js, .NET)
-- **Week 25**: Agentic frameworks (LangChain, LangGraph, SDKs)
+**Progressive Language Introduction:**
+- **Weeks 1-5**: Python with OpenAI + Azure OpenAI
+- **Weeks 6-10**: Add Go and Node.js (backend languages)
+- **Weeks 11-15**: Add React, Angular, Next.js (frontend frameworks)
+- **Weeks 16-20**: Add .NET Web API, Blazor, Aspire (.NET ecosystem)
+- **Weeks 21-25**: Master all platforms + frameworks (LangChain, LangGraph, SDKs)
+
+**Dual Provider Support:**
+- **Every week**: All implementations support both OpenAI and Azure OpenAI
+- **Week 1**: Start with both providers from day one
+- **Throughout**: Compare and contrast both providers
 
 ---
 

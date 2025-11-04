@@ -2,7 +2,8 @@
 
 **Theme:** Multi-Agent Intro + ReAct (Reasoning + Acting)  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** Simple multi-tool agent reasoning log + ReAct mastery
+**Primary Outcome:** Simple multi-tool agent reasoning log + ReAct mastery  
+**Platforms:** OpenAI + Azure OpenAI (Python) - Dual provider support from Week 1
 
 ---
 
@@ -15,6 +16,7 @@ By the end of this week, you will:
 - [ ] Implement reasoning traces
 - [ ] Create multi-tool agents
 - [ ] Understand when to use ReAct vs other patterns
+- [ ] Implement ReAct agents with both OpenAI and Azure OpenAI
 
 ---
 

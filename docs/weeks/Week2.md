@@ -2,7 +2,8 @@
 
 **Theme:** Python & Data Handling  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** Clean data ingestion + utilities (`scripts/ingest.py`)
+**Primary Outcome:** Clean data ingestion + utilities (`scripts/ingest.py`)  
+**Platforms:** OpenAI + Azure OpenAI (Python) - Dual provider support from Week 1
 
 ---
 
@@ -15,6 +16,7 @@ By the end of this week, you will:
 - [ ] Chunk text for LLM processing
 - [ ] Build robust data ingestion scripts
 - [ ] Handle errors and edge cases in data processing
+- [ ] Use both OpenAI and Azure OpenAI for data processing tasks
 
 ---
 

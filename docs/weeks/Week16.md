@@ -2,7 +2,8 @@
 
 **Theme:** Production Optimization  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** Production-ready optimization strategies + Performance metrics
+**Primary Outcome:** Production-ready optimization strategies + Performance metrics  
+**Platforms:** OpenAI + Azure OpenAI (All languages + **.NET Web API intro**)
 
 ---
 
@@ -14,6 +15,7 @@ By the end of this week, you will:
 - [ ] Tune performance
 - [ ] Implement monitoring
 - [ ] Handle production challenges
+- [ ] **Introduction to .NET Web API**: Optional .NET backend implementation (if time permits)
 
 ---
 

@@ -2,7 +2,8 @@
 
 **Theme:** Applied Mini Projects  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** One polished micro-app (Gradio or CLI app)
+**Primary Outcome:** One polished micro-app (Gradio or CLI app)  
+**Platforms:** OpenAI + Azure OpenAI (Python, Go, Node.js)
 
 ---
 
@@ -14,6 +15,8 @@ By the end of this week, you will:
 - [ ] Integrate all learned concepts
 - [ ] Deploy a working application
 - [ ] Polish and document your project
+- [ ] Choose implementation language (Python, Go, or Node.js)
+- [ ] Support both OpenAI and Azure OpenAI
 
 ---
 

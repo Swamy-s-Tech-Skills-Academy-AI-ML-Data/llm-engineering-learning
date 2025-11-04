@@ -2,7 +2,8 @@
 
 **Theme:** Structured Outputs & Orchestration  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** Reliable JSON / tool calling + Function call schema set
+**Primary Outcome:** Reliable JSON / tool calling + Function call schema set  
+**Platforms:** OpenAI + Azure OpenAI (Python, **Go intro**)
 
 ---
 
@@ -14,6 +15,7 @@ By the end of this week, you will:
 - [ ] Define tool schemas
 - [ ] Build reliable structured output systems
 - [ ] Handle validation and errors
+- [ ] **Introduction to Go**: Implement structured outputs in Go
 
 ---
 
@@ -192,7 +194,118 @@ By the end of this week, you will:
 
 ---
 
-### Day 5: Review & Practice (30 minutes)
+### Day 5: Go Introduction - Structured Outputs (30 minutes)
+
+**Learning Goal:** Implement structured outputs in Go (optional, for multi-platform learning)
+
+**Tasks (30 min):**
+
+1. **Go Setup** (5 min)
+   ```bash
+   # Install Go if needed: https://go.dev/doc/install
+   go version  # Verify Go 1.21+
+   
+   # Create Go module
+   mkdir llm-go && cd llm-go
+   go mod init llm-go
+   ```
+
+2. **Go Implementation** (25 min)
+   ```go
+   // main.go - Structured outputs in Go
+   package main
+   
+   import (
+       "bytes"
+       "encoding/json"
+       "fmt"
+       "io"
+       "net/http"
+       "os"
+   )
+   
+   type ChatRequest struct {
+       Model       string    `json:"model"`
+       Messages    []Message `json:"messages"`
+       Temperature float64   `json:"temperature"`
+   }
+   
+   type Message struct {
+       Role    string `json:"role"`
+       Content string `json:"content"`
+   }
+   
+   type ChatResponse struct {
+       Choices []Choice `json:"choices"`
+   }
+   
+   type Choice struct {
+       Message Message `json:"message"`
+   }
+   
+   func callOpenAI(messages []Message, provider string) (string, error) {
+       apiKey := os.Getenv("OPENAI_API_KEY")
+       endpoint := "https://api.openai.com/v1/chat/completions"
+       
+       if provider == "azure" {
+           apiKey = os.Getenv("AZURE_OPENAI_API_KEY")
+           endpoint = fmt.Sprintf("%s/openai/deployments/gpt-4/chat/completions?api-version=2024-02-15-preview",
+               os.Getenv("AZURE_OPENAI_ENDPOINT"))
+       }
+       
+       reqBody := ChatRequest{
+           Model:       "gpt-4",
+           Messages:    messages,
+           Temperature: 0.7,
+       }
+       
+       jsonData, _ := json.Marshal(reqBody)
+       req, _ := http.NewRequest("POST", endpoint, bytes.NewBuffer(jsonData))
+       req.Header.Set("Content-Type", "application/json")
+       req.Header.Set("Authorization", "Bearer "+apiKey)
+       
+       client := &http.Client{}
+       resp, err := client.Do(req)
+       if err != nil {
+           return "", err
+       }
+       defer resp.Body.Close()
+       
+       body, _ := io.ReadAll(resp.Body)
+       var chatResp ChatResponse
+       json.Unmarshal(body, &chatResp)
+       
+       return chatResp.Choices[0].Message.Content, nil
+   }
+   
+   func main() {
+       messages := []Message{
+           {Role: "user", Content: "Extract key info from: 'Product X costs $99 and ships in 2 days'"},
+       }
+       
+       // Test with OpenAI
+       response, _ := callOpenAI(messages, "openai")
+       fmt.Println("OpenAI Response:", response)
+       
+       // Test with Azure OpenAI
+       response, _ = callOpenAI(messages, "azure")
+       fmt.Println("Azure OpenAI Response:", response)
+   }
+   ```
+
+**Exercise:**
+- [ ] Set up Go environment
+- [ ] Implement structured output in Go
+- [ ] Test with both OpenAI and Azure OpenAI
+- [ ] Compare Go vs Python implementations
+
+**Note:** This is optional for Week 6. Focus on Python first, then try Go if time permits.
+
+---
+
+### Day 5 Alternative: Review & Practice (30 minutes)
+
+**If focusing on Python only:**
 
 **Tasks:**
 - Review concepts
@@ -203,14 +316,16 @@ By the end of this week, you will:
 - [ ] Tool registry with schemas
 - [ ] Function calling working
 - [ ] Validation system
+- [ ] (Optional) Go implementation
 
 ---
 
 ## 🔄 Next Week Preview
 
-**Week 7:** Optimization & Performance
+**Week 7:** Optimization & Performance + **Node.js Introduction**
 - Latency optimization
 - Token cost reduction
 - Caching strategies
 - Model selection
+- Node.js implementation examples
 

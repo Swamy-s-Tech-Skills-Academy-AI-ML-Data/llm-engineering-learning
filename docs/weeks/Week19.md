@@ -2,7 +2,8 @@
 
 **Theme:** Research & Experimentation  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** Research framework + Experimentation system
+**Primary Outcome:** Research framework + Experimentation system  
+**Platforms:** OpenAI + Azure OpenAI (All languages + **.NET Aspire intro**)
 
 ---
 
@@ -14,6 +15,7 @@ By the end of this week, you will:
 - [ ] Analyze results
 - [ ] Stay current with field
 - [ ] Contribute to knowledge
+- [ ] **Introduction to .NET Aspire**: Optional orchestration setup (if time permits)
 
 ---
 

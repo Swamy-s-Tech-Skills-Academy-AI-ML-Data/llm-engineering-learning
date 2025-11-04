@@ -2,7 +2,8 @@
 
 **Theme:** Bots & Scraping  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** Basic scraper feeding LLM summarizer
+**Primary Outcome:** Basic scraper feeding LLM summarizer  
+**Platforms:** OpenAI + Azure OpenAI (Python) - Dual provider support from Week 1
 
 ---
 
@@ -14,6 +15,7 @@ By the end of this week, you will:
 - [ ] Integrate scraping with LLM summarization
 - [ ] Create a news/website summarizer bot
 - [ ] Handle errors and edge cases in scraping
+- [ ] Compare OpenAI vs Azure OpenAI for summarization tasks
 
 ---
 

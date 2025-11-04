@@ -2,7 +2,8 @@
 
 **Theme:** Capstone Build  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** Integrated RAG + tools + eval + Capstone repo folder
+**Primary Outcome:** Integrated RAG + tools + eval + Capstone repo folder  
+**Platforms:** OpenAI + Azure OpenAI (Python, Go, Node.js, **React intro**)
 
 ---
 
@@ -14,6 +15,7 @@ By the end of this week, you will:
 - [ ] Combine all learned concepts
 - [ ] Create production-ready system
 - [ ] Document and showcase project
+- [ ] **Introduction to React**: Optional frontend component (if time permits)
 
 ---
 
