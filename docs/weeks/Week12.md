@@ -2,7 +2,8 @@
 
 **Theme:** Review & Deep Dives  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** Retrospective + advanced experiments + Lessons learned doc
+**Primary Outcome:** Retrospective + advanced experiments + Lessons learned doc  
+**Platforms:** OpenAI + Azure OpenAI (Python, Go, Node.js, React)
 
 ---
 

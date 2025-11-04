@@ -2,7 +2,8 @@
 
 **Theme:** Reasoning Patterns Deep Dive  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** Mastery of different reasoning patterns + Pattern selection guide
+**Primary Outcome:** Mastery of different reasoning patterns + Pattern selection guide  
+**Platforms:** OpenAI + Azure OpenAI (Python, Go, Node.js, React, Angular)
 
 ---
 

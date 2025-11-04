@@ -2,7 +2,8 @@
 
 **Theme:** Autonomous / Planning Agents  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** Planner vs reactive comparison + Planning eval notes
+**Primary Outcome:** Planner vs reactive comparison + Planning eval notes  
+**Platforms:** OpenAI + Azure OpenAI (Python, Go, Node.js)
 
 ---
 

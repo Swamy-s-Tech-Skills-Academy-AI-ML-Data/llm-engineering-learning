@@ -2,7 +2,8 @@
 
 **Theme:** Advanced Evaluation  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** Comprehensive evaluation framework + Custom metrics
+**Primary Outcome:** Comprehensive evaluation framework + Custom metrics  
+**Platforms:** OpenAI + Azure OpenAI (All languages + .NET Web API)
 
 ---
 
