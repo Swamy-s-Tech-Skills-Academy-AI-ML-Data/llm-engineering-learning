@@ -2,7 +2,8 @@
 
 **Theme:** Agentic Frameworks (LangChain, LangGraph, SDKs)  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** Mastery of all major agentic frameworks with OpenAI and Azure OpenAI
+**Primary Outcome:** Mastery of all major agentic frameworks with OpenAI and Azure OpenAI  
+**Platforms:** OpenAI + Azure OpenAI (LangChain, LangGraph, OpenAI Agent SDK, Azure Agent SDK)
 
 ---
 

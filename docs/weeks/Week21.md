@@ -2,7 +2,8 @@
 
 **Theme:** Azure OpenAI Deep Dive & Multi-Provider Patterns  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** Azure OpenAI mastery + Multi-provider abstraction layer
+**Primary Outcome:** Azure OpenAI mastery + Multi-provider abstraction layer  
+**Platforms:** OpenAI + Azure OpenAI (All platforms: Python, Go, Node.js, React, Angular, Next.js, .NET)
 
 ---
 

@@ -2,7 +2,8 @@
 
 **Theme:** .NET LLM Integration  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** Full-stack .NET LLM applications with Aspire, Web API, and Blazor
+**Primary Outcome:** Full-stack .NET LLM applications with Aspire, Web API, and Blazor  
+**Platforms:** OpenAI + Azure OpenAI (Aspire, Web API, Blazor mastery)
 
 ---
 

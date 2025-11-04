@@ -2,7 +2,8 @@
 
 **Theme:** Frontend LLM Integration  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** LLM-powered frontend applications in React, Angular, and Next.js
+**Primary Outcome:** LLM-powered frontend applications in React, Angular, and Next.js  
+**Platforms:** OpenAI + Azure OpenAI (React, Angular, Next.js mastery)
 
 ---
 

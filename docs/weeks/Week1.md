@@ -2,7 +2,8 @@
 
 **Theme:** Foundations & Environment  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** Reproducible environment, API key management, working diagnostics notebook
+**Primary Outcome:** Reproducible environment, API key management, working diagnostics notebook  
+**Platforms:** OpenAI + Azure OpenAI (Python) - Dual provider support from Week 1
 
 ---
 

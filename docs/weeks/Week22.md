@@ -2,7 +2,8 @@
 
 **Theme:** Multi-Language Implementation (Python, Go, Node.js)  
 **Time Commitment:** 5 days × 30 minutes = 2.5 hours  
-**Primary Outcome:** LLM applications in Python, Go, and Node.js with OpenAI + Azure OpenAI
+**Primary Outcome:** LLM applications in Python, Go, and Node.js with OpenAI + Azure OpenAI  
+**Platforms:** OpenAI + Azure OpenAI (Python, Go, Node.js mastery)
 
 ---
 
