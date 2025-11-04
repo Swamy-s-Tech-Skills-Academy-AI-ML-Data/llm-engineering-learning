@@ -247,7 +247,7 @@ When opening a notebook:
 ### Next Steps
 
 1. Review the `README.md` for project overview and objectives
-1. Check out `docs/learning-plan.md` for the 12-week learning roadmap
+1. Check out `docs/learning-plan.md` for the complete 25-week learning roadmap
 1. Explore the repository structure and familiarize yourself with the folders
 1. Start with `.backup/notebooks/day1.ipynb` to build your first LLM application
 1. Use the `eval/` utilities to track your experiments from day one

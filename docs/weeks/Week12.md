@@ -171,22 +171,37 @@ You've completed 12 weeks of LLM Engineering learning! You now have:
 
 **Next Steps:**
 - Continue building projects
-- Explore advanced topics (Weeks 13-20)
+- Explore advanced topics (Weeks 13-25)
 - Join communities
 - Share your work
 
 ---
 
-## 🔄 Optional: Weeks 13-20
+## 🔄 Continue Learning: Weeks 13-25
 
-If you want to extend your learning, Weeks 13-20 cover:
+The full 25-week learning path continues with:
+
+**Weeks 13-15 (Advanced Phase):**
 - Advanced RAG techniques
+- Reasoning Patterns Deep Dive
 - Multi-agent systems
-- Production optimization
-- Research methods
-- Specialized applications
+- Frontend integration (React, Angular, Next.js)
 
-See `Week13.md` through `Week20.md` for extended learning path.
+**Weeks 16-20 (Production Phase):**
+- Production optimization
+- Advanced evaluation
+- Specialized applications
+- .NET ecosystem integration (Web API, Blazor, Aspire)
+- Mastery across all platforms
+
+**Weeks 21-25 (Mastery Phase):**
+- Azure OpenAI Deep Dive
+- Multi-Language Mastery (Python, Go, Node.js)
+- Frontend Mastery (React, Angular, Next.js)
+- .NET Mastery (Aspire, Web API, Blazor)
+- Agentic Frameworks (LangChain, LangGraph, SDKs)
+
+See [`Week13.md`](Week13.md) through [`Week25.md`](Week25.md) for the complete learning path.
 
 ---
 
