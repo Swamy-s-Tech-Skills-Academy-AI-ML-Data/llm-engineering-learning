@@ -182,9 +182,10 @@ By the end of this week, you will:
    ```
 
 **Exercise:**
-- [ ] Run `python scripts/api_client.py` - should see success message
+- [ ] Run `python scripts/api_client.py` - should see success messages for both providers
 - [ ] Verify `.env` is in `.gitignore`
-- [ ] Test that you get an error if you remove the API key
+- [ ] Test that you get an error if you remove the API keys
+- [ ] Compare OpenAI vs Azure OpenAI response formats
 
 **Security Checklist:**
 - [ ] `.env` file is NOT committed to git
