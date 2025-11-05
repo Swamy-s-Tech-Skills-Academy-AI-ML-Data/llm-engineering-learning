@@ -28,12 +28,21 @@ By the end of this week, you will:
 
 1. **Docker Setup** (15 min)
    ```dockerfile
-   FROM python:3.9
+   # Option A: Using uv (recommended - faster)
+   FROM ghcr.io/astral-sh/uv:python3.11-bookworm AS uv
    WORKDIR /app
-   COPY requirements.txt .
-   RUN pip install -r requirements.txt
+   COPY pyproject.toml uv.lock ./
+   RUN uv sync --frozen
    COPY . .
-   CMD ["python", "app.py"]
+   CMD ["uv", "run", "python", "app.py"]
+   
+   # Option B: Traditional pip (if needed)
+   # FROM python:3.11
+   # WORKDIR /app
+   # COPY requirements.txt .
+   # RUN pip install -r requirements.txt
+   # COPY . .
+   # CMD ["python", "app.py"]
    ```
 
 2. **Local Server** (15 min)

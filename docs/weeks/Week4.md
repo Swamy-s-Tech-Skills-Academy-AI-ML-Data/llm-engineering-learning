@@ -28,8 +28,12 @@ By the end of this week, you will:
 **Tasks (30 min):**
 
 1. **Install Scraping Libraries** (5 min)
-   ```bash
-   pip install beautifulsoup4 requests lxml
+   ```powershell
+   # Using uv (recommended)
+   uv add beautifulsoup4 requests lxml
+   
+   # Or if already in pyproject.toml, just sync
+   uv sync
    ```
 
 2. **Basic Web Scraping** (15 min)

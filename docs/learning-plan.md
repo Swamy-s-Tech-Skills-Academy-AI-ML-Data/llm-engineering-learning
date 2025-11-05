@@ -23,19 +23,32 @@ This learning plan is designed to accompany **Ed Donner's "LLM Engineering: Mast
 
 ### Your First 5 Minutes
 
-1. **Set up environment:**
-   ```bash
-   python --version  # Verify Python 3.8+
-   python -m venv venv
-   venv\Scripts\activate  # Windows
-   pip install openai python-dotenv
+1. **Install uv (if not already installed):**
+   ```powershell
+   # Windows (PowerShell)
+   powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+   
+   # macOS/Linux
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+   
+   # Alternative (via pip)
+   pip install uv
    ```
 
-2. **Get API keys:**
+2. **Set up environment:**
+   ```powershell
+   # Sync environment (creates .venv and installs all dependencies from pyproject.toml)
+   uv sync
+   
+   # Or use uv run prefix (no activation needed)
+   uv run python --version
+   ```
+
+3. **Get API keys:**
    - OpenAI: [platform.openai.com/api-keys](https://platform.openai.com/api-keys)
    - Azure OpenAI: [portal.azure.com](https://portal.azure.com) → Create Azure OpenAI resource
 
-3. **Create `.env` file:**
+4. **Create `.env` file:**
    ```env
    OPENAI_API_KEY=sk-your-key-here
    AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com
@@ -43,7 +56,9 @@ This learning plan is designed to accompany **Ed Donner's "LLM Engineering: Mast
    AZURE_OPENAI_API_VERSION=2024-02-15-preview
    ```
 
-4. **Start Week 1:** Open [`docs/weeks/Week1.md`](weeks/Week1.md) and follow day-by-day
+5. **Start Week 1:** Open [`docs/weeks/Week1.md`](weeks/Week1.md) and follow day-by-day
+
+> **Note**: This project uses [`uv`](https://github.com/astral-sh/uv) for fast dependency management. See [`README.md`](../README.md) for detailed setup instructions.
 
 ---
 
@@ -276,7 +291,7 @@ Use this for each week:
 ### Common Issues
 
 **"ModuleNotFoundError: No module named 'openai'"**
-- Solution: Activate virtual environment and run `pip install openai`
+- Solution: Run `uv sync` to install all dependencies from `pyproject.toml`, or use `uv run python your_script.py` to run with the correct environment
 
 **"API key not found"**
 - Solution: Check `.env` file exists, contains `OPENAI_API_KEY=...` (no spaces), and use `load_dotenv()`
